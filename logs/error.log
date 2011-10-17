@@ -1,0 +1,14 @@
+2011-07-10 13:27:37	exception 'PropelException' with message 'Unsupported Propel driver: masql: Check your configuration file' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\adapter\DBAdapter.php:71
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\Propel.php(754): DBAdapter::factory('masql')
+#1 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\query\ModelCriteria.php(1215): Propel::getDB('taberna_colonia...')
+#2 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\query\ModelCriteria.php(1123): ModelCriteria->getSelectStatement(NULL)
+#3 C:\xampp\xampp\htdocs\ltc\login_accion.php(8): ModelCriteria->findOne()
+#4 {main}
+2011-07-10 13:27:39	exception 'PropelException' with message 'Unsupported Propel driver: masql: Check your configuration file' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\adapter\DBAdapter.php:71
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\Propel.php(754): DBAdapter::factory('masql')
+#1 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\query\ModelCriteria.php(1215): Propel::getDB('taberna_colonia...')
+#2 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\query\ModelCriteria.php(1123): ModelCriteria->getSelectStatement(NULL)
+#3 C:\xampp\xampp\htdocs\ltc\login_accion.php(8): ModelCriteria->findOne()
+#4 {main}

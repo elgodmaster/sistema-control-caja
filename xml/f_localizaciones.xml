@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<items>
+<item type="label" label="Datos Localización"/>
+<item type="settings" position="label-left" labelWidth="120"/>
+<item type="input" validate="NotEmpty" name="nombre" bind="nombre" label="Nombre"/>
+<item type="select" name="tipo_dispositivo" bind="tipo_dispositivo" label="Tipo Dispositivo">
+    <option value="P" text="Pantalla"/>
+    <option value="I" text="Impresora"/>
+</item>
+<item type="input" name="direccion_printer" bind="direccion_printer" label="IP Impresora"/>
+<item type="select" name="visible" bind="visible" label="Localización Visible">
+    <option value="S" text="Si"/>
+    <option value="N" text="No"/>
+</item>
+<item type="select" name="estado" bind="estado" label="Estado">
+    <option value="A" text="Activo"/>
+    <option value="I" text="Inactivo"/>
+</item>
+<item type="button" command="guardar" value="Guardar"/>
+</items>

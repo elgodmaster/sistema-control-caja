@@ -1,0 +1,527 @@
+[2011-07-24 21:11:56]exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1364 Field 'accion' doesn't have a default value' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php:289
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php(289): PDOStatement->execute()
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLog.php(542): BasePeer::doInsert(Object(Criteria), Object(PropelPDO))
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLog.php(482): BaseLog->doSave(Object(PropelPDO))
+#3 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Log.php(27): BaseLog->save(Object(PropelPDO))
+#4 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Caja.php(48): Log::registraLog(0, 'Caja', 'Caja # 31: rrr', 'I', Object(PropelPDO))
+#5 C:\xampp\xampp\htdocs\ltc\midware.php(13): Caja::guardaCaja(0)
+#6 {main}
+
+Next exception 'PropelException' with message 'Unable to execute INSERT statement [INSERT INTO `log` (`ID_LOG`,`ID_PERSONA`,`FECHA_HORA`,`MODULO`,`DETALLE`) VALUES (:p1,:p2,:p3,:p4,:p5)] [wrapped: SQLSTATE[HY000]: General error: 1364 Field 'accion' doesn't have a default value]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php:293
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLog.php(542): BasePeer::doInsert(Object(Criteria), Object(PropelPDO))
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLog.php(482): BaseLog->doSave(Object(PropelPDO))
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Log.php(27): BaseLog->save(Object(PropelPDO))
+#3 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Caja.php(48): Log::registraLog(0, 'Caja', 'Caja # 31: rrr', 'I', Object(PropelPDO))
+#4 C:\xampp\xampp\htdocs\ltc\midware.php(13): Caja::guardaCaja(0)
+#5 {main}[2011-07-24 21:12:29]exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1364 Field 'accion' doesn't have a default value' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php:289
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php(289): PDOStatement->execute()
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLog.php(542): BasePeer::doInsert(Object(Criteria), Object(PropelPDO))
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLog.php(482): BaseLog->doSave(Object(PropelPDO))
+#3 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Log.php(27): BaseLog->save(Object(PropelPDO))
+#4 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Caja.php(48): Log::registraLog(0, 'Caja', 'Caja # 32: ooo', 'I', Object(PropelPDO))
+#5 C:\xampp\xampp\htdocs\ltc\midware.php(13): Caja::guardaCaja(0)
+#6 {main}
+
+Next exception 'PropelException' with message 'Unable to execute INSERT statement [INSERT INTO `log` (`ID_LOG`,`ID_PERSONA`,`FECHA_HORA`,`MODULO`,`DETALLE`) VALUES (:p1,:p2,:p3,:p4,:p5)] [wrapped: SQLSTATE[HY000]: General error: 1364 Field 'accion' doesn't have a default value]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php:293
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLog.php(542): BasePeer::doInsert(Object(Criteria), Object(PropelPDO))
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLog.php(482): BaseLog->doSave(Object(PropelPDO))
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Log.php(27): BaseLog->save(Object(PropelPDO))
+#3 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Caja.php(48): Log::registraLog(0, 'Caja', 'Caja # 32: ooo', 'I', Object(PropelPDO))
+#4 C:\xampp\xampp\htdocs\ltc\midware.php(13): Caja::guardaCaja(0)
+#5 {main}[2011-07-24 21:13:21]exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1364 Field 'accion' doesn't have a default value' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php:289
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php(289): PDOStatement->execute()
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLog.php(542): BasePeer::doInsert(Object(Criteria), Object(PropelPDO))
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLog.php(482): BaseLog->doSave(Object(PropelPDO))
+#3 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Log.php(27): BaseLog->save(Object(PropelPDO))
+#4 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Caja.php(48): Log::registraLog(0, 'Caja', 'Caja # 33: rafa', 'I', Object(PropelPDO))
+#5 C:\xampp\xampp\htdocs\ltc\midware.php(13): Caja::guardaCaja(0)
+#6 {main}
+
+Next exception 'PropelException' with message 'Unable to execute INSERT statement [INSERT INTO `log` (`ID_LOG`,`ID_PERSONA`,`FECHA_HORA`,`MODULO`,`DETALLE`) VALUES (:p1,:p2,:p3,:p4,:p5)] [wrapped: SQLSTATE[HY000]: General error: 1364 Field 'accion' doesn't have a default value]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php:293
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLog.php(542): BasePeer::doInsert(Object(Criteria), Object(PropelPDO))
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLog.php(482): BaseLog->doSave(Object(PropelPDO))
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Log.php(27): BaseLog->save(Object(PropelPDO))
+#3 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Caja.php(48): Log::registraLog(0, 'Caja', 'Caja # 33: rafa', 'I', Object(PropelPDO))
+#4 C:\xampp\xampp\htdocs\ltc\midware.php(13): Caja::guardaCaja(0)
+#5 {main}[2011-08-02 00:46:46]exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1364 Field 'output_device' doesn't have a default value' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php:289
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php(289): PDOStatement->execute()
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLocalizacion.php(501): BasePeer::doInsert(Object(Criteria), Object(PropelPDO))
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLocalizacion.php(453): BaseLocalizacion->doSave(Object(PropelPDO))
+#3 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Localizacion.php(64): BaseLocalizacion->save(Object(PropelPDO))
+#4 C:\xampp\xampp\htdocs\ltc\midware.php(31): Localizacion::guardaLocalizacion(0)
+#5 {main}
+
+Next exception 'PropelException' with message 'Unable to execute INSERT statement [INSERT INTO `localizacion` (`ID_LOCALIZACION`,`NOMBRE`,`DIRECCION_PRINTER`,`VISIBLE`,`ESTADO`) VALUES (:p1,:p2,:p3,:p4,:p5)] [wrapped: SQLSTATE[HY000]: General error: 1364 Field 'output_device' doesn't have a default value]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php:293
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLocalizacion.php(501): BasePeer::doInsert(Object(Criteria), Object(PropelPDO))
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLocalizacion.php(453): BaseLocalizacion->doSave(Object(PropelPDO))
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Localizacion.php(64): BaseLocalizacion->save(Object(PropelPDO))
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(31): Localizacion::guardaLocalizacion(0)
+#4 {main}[2011-08-02 00:51:02]exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1364 Field 'output_device' doesn't have a default value' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php:289
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php(289): PDOStatement->execute()
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLocalizacion.php(501): BasePeer::doInsert(Object(Criteria), Object(PropelPDO))
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLocalizacion.php(453): BaseLocalizacion->doSave(Object(PropelPDO))
+#3 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Localizacion.php(64): BaseLocalizacion->save(Object(PropelPDO))
+#4 C:\xampp\xampp\htdocs\ltc\midware.php(31): Localizacion::guardaLocalizacion(0)
+#5 {main}
+
+Next exception 'PropelException' with message 'Unable to execute INSERT statement [INSERT INTO `localizacion` (`ID_LOCALIZACION`,`NOMBRE`,`DIRECCION_PRINTER`,`VISIBLE`,`ESTADO`) VALUES (:p1,:p2,:p3,:p4,:p5)] [wrapped: SQLSTATE[HY000]: General error: 1364 Field 'output_device' doesn't have a default value]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php:293
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLocalizacion.php(501): BasePeer::doInsert(Object(Criteria), Object(PropelPDO))
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLocalizacion.php(453): BaseLocalizacion->doSave(Object(PropelPDO))
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Localizacion.php(64): BaseLocalizacion->save(Object(PropelPDO))
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(31): Localizacion::guardaLocalizacion(0)
+#4 {main}[2011-08-02 00:54:08]exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1364 Field 'output_device' doesn't have a default value' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php:289
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php(289): PDOStatement->execute()
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLocalizacion.php(501): BasePeer::doInsert(Object(Criteria), Object(PropelPDO))
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLocalizacion.php(453): BaseLocalizacion->doSave(Object(PropelPDO))
+#3 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Localizacion.php(64): BaseLocalizacion->save(Object(PropelPDO))
+#4 C:\xampp\xampp\htdocs\ltc\midware.php(29): Localizacion::guardaLocalizacion(0)
+#5 {main}
+
+Next exception 'PropelException' with message 'Unable to execute INSERT statement [INSERT INTO `localizacion` (`ID_LOCALIZACION`,`NOMBRE`,`DIRECCION_PRINTER`,`VISIBLE`,`ESTADO`) VALUES (:p1,:p2,:p3,:p4,:p5)] [wrapped: SQLSTATE[HY000]: General error: 1364 Field 'output_device' doesn't have a default value]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php:293
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLocalizacion.php(501): BasePeer::doInsert(Object(Criteria), Object(PropelPDO))
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLocalizacion.php(453): BaseLocalizacion->doSave(Object(PropelPDO))
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Localizacion.php(64): BaseLocalizacion->save(Object(PropelPDO))
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(29): Localizacion::guardaLocalizacion(0)
+#4 {main}[2011-08-03 16:53:30]exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1364 Field 'nombre' doesn't have a default value' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php:289
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php(289): PDOStatement->execute()
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLocalizacion.php(501): BasePeer::doInsert(Object(Criteria), Object(PropelPDO))
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLocalizacion.php(453): BaseLocalizacion->doSave(Object(PropelPDO))
+#3 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Localizacion.php(65): BaseLocalizacion->save(Object(PropelPDO))
+#4 C:\xampp\xampp\htdocs\ltc\midware.php(34): Localizacion::guardaLocalizacion(0)
+#5 {main}
+
+Next exception 'PropelException' with message 'Unable to execute INSERT statement [INSERT INTO `localizacion` (`ID_LOCALIZACION`,`ESTADO`) VALUES (:p1,:p2)] [wrapped: SQLSTATE[HY000]: General error: 1364 Field 'nombre' doesn't have a default value]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php:293
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLocalizacion.php(501): BasePeer::doInsert(Object(Criteria), Object(PropelPDO))
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLocalizacion.php(453): BaseLocalizacion->doSave(Object(PropelPDO))
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Localizacion.php(65): BaseLocalizacion->save(Object(PropelPDO))
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(34): Localizacion::guardaLocalizacion(0)
+#4 {main}[2011-08-03 17:40:21]exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1364 Field 'nombre' doesn't have a default value' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php:289
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php(289): PDOStatement->execute()
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLocalizacion.php(501): BasePeer::doInsert(Object(Criteria), Object(PropelPDO))
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLocalizacion.php(453): BaseLocalizacion->doSave(Object(PropelPDO))
+#3 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Localizacion.php(65): BaseLocalizacion->save(Object(PropelPDO))
+#4 C:\xampp\xampp\htdocs\ltc\midware.php(34): Localizacion::guardaLocalizacion(0)
+#5 {main}
+
+Next exception 'PropelException' with message 'Unable to execute INSERT statement [INSERT INTO `localizacion` (`ID_LOCALIZACION`,`ESTADO`) VALUES (:p1,:p2)] [wrapped: SQLSTATE[HY000]: General error: 1364 Field 'nombre' doesn't have a default value]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php:293
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLocalizacion.php(501): BasePeer::doInsert(Object(Criteria), Object(PropelPDO))
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseLocalizacion.php(453): BaseLocalizacion->doSave(Object(PropelPDO))
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Localizacion.php(65): BaseLocalizacion->save(Object(PropelPDO))
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(34): Localizacion::guardaLocalizacion(0)
+#4 {main}[2011-08-04 20:13:29]exception 'PropelException' with message 'Call to undefined method: getIdLocalizacion' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\om\BaseObject.php:382
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseCargo.php(945): BaseObject->__call('getIdLocalizaci...', Array)
+#1 [internal function]: BaseCargo->__call('getIdLocalizaci...', Array)
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Cargo.php(118): Cargo->getIdLocalizacion()
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(77): Cargo::eliminarCargo(0)
+#4 {main}[2011-08-08 15:01:06]exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1366 Incorrect string value: '\xC3\xAD\xC3\xAD\xC3\xB3' for column 'descripcion' at row 1' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php:289
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php(289): PDOStatement->execute()
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseProducto.php(746): BasePeer::doInsert(Object(Criteria), Object(PropelPDO))
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseProducto.php(698): BaseProducto->doSave(Object(PropelPDO))
+#3 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Producto.php(69): BaseProducto->save(Object(PropelPDO))
+#4 C:\xampp\xampp\htdocs\ltc\midware.php(48): Producto::guardaProducto(0)
+#5 {main}
+
+Next exception 'PropelException' with message 'Unable to execute INSERT statement [INSERT INTO `producto` (`ID_PRODUCTO`,`DESCRIPCION`,`TIPO`,`STOCK_HANDLER`,`STOCK`,`COSTO`,`PRECIO`,`FECHA_INGRESO`,`ESTADO`,`ESPECIFICACIONES`,`IMAGEN`,`PAGA_IVA`) VALUES (:p1,:p2,:p3,:p4,:p5,:p6,:p7,:p8,:p9,:p10,:p11,:p12)] [wrapped: SQLSTATE[HY000]: General error: 1366 Incorrect string value: '\xC3\xAD\xC3\xAD\xC3\xB3' for column 'descripcion' at row 1]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php:293
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseProducto.php(746): BasePeer::doInsert(Object(Criteria), Object(PropelPDO))
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseProducto.php(698): BaseProducto->doSave(Object(PropelPDO))
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Producto.php(69): BaseProducto->save(Object(PropelPDO))
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(48): Producto::guardaProducto(0)
+#4 {main}[2011-08-08 15:01:27]exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1366 Incorrect string value: '\xC3\xB3oo' for column 'descripcion' at row 1' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php:289
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php(289): PDOStatement->execute()
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseProducto.php(746): BasePeer::doInsert(Object(Criteria), Object(PropelPDO))
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseProducto.php(698): BaseProducto->doSave(Object(PropelPDO))
+#3 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Producto.php(69): BaseProducto->save(Object(PropelPDO))
+#4 C:\xampp\xampp\htdocs\ltc\midware.php(48): Producto::guardaProducto(0)
+#5 {main}
+
+Next exception 'PropelException' with message 'Unable to execute INSERT statement [INSERT INTO `producto` (`ID_PRODUCTO`,`DESCRIPCION`,`TIPO`,`STOCK_HANDLER`,`STOCK`,`COSTO`,`PRECIO`,`FECHA_INGRESO`,`ESTADO`,`ESPECIFICACIONES`,`IMAGEN`,`PAGA_IVA`) VALUES (:p1,:p2,:p3,:p4,:p5,:p6,:p7,:p8,:p9,:p10,:p11,:p12)] [wrapped: SQLSTATE[HY000]: General error: 1366 Incorrect string value: '\xC3\xB3oo' for column 'descripcion' at row 1]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\BasePeer.php:293
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseProducto.php(746): BasePeer::doInsert(Object(Criteria), Object(PropelPDO))
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BaseProducto.php(698): BaseProducto->doSave(Object(PropelPDO))
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Producto.php(69): BaseProducto->save(Object(PropelPDO))
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(48): Producto::guardaProducto(0)
+#4 {main}[2011-08-11 00:19:03]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 10 2011 00:00:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Wed Aug 10 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 10 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 10 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Wed Aug 10 2011 00:00:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 10 2011 00:00:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 10 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 10 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-11 00:26:06]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 10 2011 00:00:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Wed Aug 10 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 10 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 10 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Wed Aug 10 2011 00:00:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 10 2011 00:00:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 10 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 10 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-11 00:28:18]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 10 2011 00:00:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Wed Aug 10 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 10 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 10 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Wed Aug 10 2011 00:00:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 10 2011 00:00:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 10 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 10 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-11 00:33:02]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 17 2011 00:32:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Wed Aug 17 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 17 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 17 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Wed Aug 17 2011 00:32:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 17 2011 00:32:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 17 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 17 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-12 20:13:02]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 10 2011 00:00:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Wed Aug 10 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 10 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 10 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Wed Aug 10 2011 00:00:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 10 2011 00:00:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 10 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 10 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-12 20:20:53]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Sat Aug 06 2011 20:20:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Sat Aug 06 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Sat Aug 06 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Sat Aug 06 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Sat Aug 06 2011 20:20:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Sat Aug 06 2011 20:20:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Sat Aug 06 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Sat Aug 06 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-12 21:05:51]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Thu Aug 04 2011 21:05:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Thu Aug 04 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Thu Aug 04 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Thu Aug 04 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Thu Aug 04 2011 21:05:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Thu Aug 04 2011 21:05:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Thu Aug 04 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Thu Aug 04 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-12 21:28:05]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Fri Aug 05 2011 21:27:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Fri Aug 05 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Fri Aug 05 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Fri Aug 05 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Fri Aug 05 2011 21:27:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Fri Aug 05 2011 21:27:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Fri Aug 05 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Fri Aug 05 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-12 21:30:44]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Sat Aug 13 2011 21:30:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Sat Aug 13 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Sat Aug 13 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Sat Aug 13 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Sat Aug 13 2011 21:30:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Sat Aug 13 2011 21:30:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Sat Aug 13 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Sat Aug 13 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-12 21:51:02]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 03 2011 21:50:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Wed Aug 03 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 03 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 03 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Wed Aug 03 2011 21:50:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 03 2011 21:50:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 03 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 03 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-12 22:05:23]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 03 2011 22:05:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Wed Aug 03 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 03 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 03 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Wed Aug 03 2011 22:05:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 03 2011 22:05:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 03 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 03 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-12 22:06:23]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 10 2011 22:06:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Wed Aug 10 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 10 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 10 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Wed Aug 10 2011 22:06:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 10 2011 22:06:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 10 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 10 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-12 22:06:54]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Tue Aug 02 2011 22:06:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Tue Aug 02 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Tue Aug 02 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Tue Aug 02 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Tue Aug 02 2011 22:06:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Tue Aug 02 2011 22:06:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Tue Aug 02 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Tue Aug 02 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-12 22:13:42]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Tue Aug 02 2011 22:13:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Tue Aug 02 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Tue Aug 02 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Tue Aug 02 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Tue Aug 02 2011 22:13:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Tue Aug 02 2011 22:13:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Tue Aug 02 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Tue Aug 02 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-12 22:14:50]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 03 2011 22:14:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Wed Aug 03 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 03 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 03 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Wed Aug 03 2011 22:14:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 03 2011 22:14:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 03 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 03 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-12 22:22:57]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Thu Aug 11 2011 22:22:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Thu Aug 11 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Thu Aug 11 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Thu Aug 11 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Thu Aug 11 2011 22:22:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Thu Aug 11 2011 22:22:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Thu Aug 11 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Thu Aug 11 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-12 22:23:49]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 10 2011 22:23:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Wed Aug 10 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 10 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 10 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Wed Aug 10 2011 22:23:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 10 2011 22:23:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 10 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 10 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-12 23:18:08]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Tue Aug 02 2011 23:06:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Tue Aug 02 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Tue Aug 02 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Tue Aug 02 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Tue Aug 02 2011 23:06:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Tue Aug 02 2011 23:06:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Tue Aug 02 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Tue Aug 02 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-12 23:18:36]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 03 2011 23:18:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Wed Aug 03 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 03 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 03 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Wed Aug 03 2011 23:18:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 03 2011 23:18:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Wed Aug 03 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Wed Aug 03 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-12 23:25:46]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Fri Aug 19 2011 23:25:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Fri Aug 19 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Fri Aug 19 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Fri Aug 19 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Fri Aug 19 2011 23:25:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Fri Aug 19 2011 23:25:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Fri Aug 19 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Fri Aug 19 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-13 19:55:29]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Fri Aug 26 2011 19:55:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Fri Aug 26 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Fri Aug 26 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Fri Aug 26 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Fri Aug 26 2011 19:55:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Fri Aug 26 2011 19:55:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Fri Aug 26 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Fri Aug 26 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-13 19:59:04]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Sun Jan 31 1937 00:00:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Sun Jan 31 1937...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Sun Jan 31 1937...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Sun Jan 31 1937...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Sun Jan 31 1937 00:00:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Sun Jan 31 1937 00:00:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(557): PropelDateTime::newInstance('Sun Jan 31 1937...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(90): BasePersona->setFechaIngreso('Sun Jan 31 1937...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-13 20:10:18]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Sat Aug 27 2011 20:10:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Sat Aug 27 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(579): PropelDateTime::newInstance('Sat Aug 27 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(91): BasePersona->setFechaSalida('Sat Aug 27 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Sat Aug 27 2011 20:10:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Sat Aug 27 2011 20:10:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(579): PropelDateTime::newInstance('Sat Aug 27 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(91): BasePersona->setFechaSalida('Sat Aug 27 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-13 20:11:30]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Thu Aug 04 2011 20:11:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Thu Aug 04 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(579): PropelDateTime::newInstance('Thu Aug 04 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(91): BasePersona->setFechaSalida('Thu Aug 04 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Thu Aug 04 2011 20:11:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Thu Aug 04 2011 20:11:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(579): PropelDateTime::newInstance('Thu Aug 04 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(91): BasePersona->setFechaSalida('Thu Aug 04 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-13 20:45:10]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 10 2011 20:44:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Wed Aug 10 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(579): PropelDateTime::newInstance('Wed Aug 10 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(91): BasePersona->setFechaSalida('Wed Aug 10 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Wed Aug 10 2011 20:44:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 10 2011 20:44:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(579): PropelDateTime::newInstance('Wed Aug 10 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(91): BasePersona->setFechaSalida('Wed Aug 10 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-13 20:50:45]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 24 2011 20:50:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Wed Aug 24 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(579): PropelDateTime::newInstance('Wed Aug 24 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(91): BasePersona->setFechaSalida('Wed Aug 24 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Wed Aug 24 2011 20:50:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 24 2011 20:50:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(579): PropelDateTime::newInstance('Wed Aug 24 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(91): BasePersona->setFechaSalida('Wed Aug 24 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-13 20:51:58]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 24 2011 20:51:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Wed Aug 24 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(579): PropelDateTime::newInstance('Wed Aug 24 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(91): BasePersona->setFechaSalida('Wed Aug 24 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Wed Aug 24 2011 20:51:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 24 2011 20:51:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(579): PropelDateTime::newInstance('Wed Aug 24 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(91): BasePersona->setFechaSalida('Wed Aug 24 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}[2011-08-13 20:54:09]exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 17 2011 20:53:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:66
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php(66): DateTime->__construct('Wed Aug 17 2011...')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(579): PropelDateTime::newInstance('Wed Aug 17 2011...', NULL, 'DateTime')
+#2 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(91): BasePersona->setFechaSalida('Wed Aug 17 2011...')
+#3 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#4 {main}
+
+Next exception 'PropelException' with message 'Error parsing date/time value: 'Wed Aug 17 2011 20:53:00 GMT-0500 (Hora est. del Pacífico de SA)' [wrapped: DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: Failed to parse time string (Wed Aug 17 2011 20:53:00 GMT-0500 (Hora est. del Pacífico de SA)) at position 40 (e): Double timezone specification]' in C:\xampp\xampp\htdocs\ltc\vendor\propel\runtime\lib\util\PropelDateTime.php:72
+Stack trace:
+#0 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\om\BasePersona.php(579): PropelDateTime::newInstance('Wed Aug 17 2011...', NULL, 'DateTime')
+#1 C:\xampp\xampp\htdocs\ltc\build\classes\ltc\Persona.php(91): BasePersona->setFechaSalida('Wed Aug 17 2011...')
+#2 C:\xampp\xampp\htdocs\ltc\midware.php(62): Persona::guardaUsuario(0)
+#3 {main}

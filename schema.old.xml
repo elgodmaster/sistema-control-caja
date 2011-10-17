@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database defaultIdMethod="native" name="taberna_colonial">
+  <table name="caja">
+    <column name="id_caja" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="descripcion" type="VARCHAR" size="45" required="true"/>
+    <column name="base_efectivo" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="estado" type="VARCHAR" size="1" required="true"/>
+    <index name="idcaja_">
+      <index-column name="id_caja"/>
+    </index>
+  </table>
+  <table name="cargo">
+    <column name="id_cargo" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="descripcion" type="VARCHAR" size="45" required="true"/>
+    <column name="estado" type="VARCHAR" size="1" required="true"/>
+    <index name="id_carg">
+      <index-column name="id_cargo"/>
+    </index>
+  </table>
+  <table name="cliente">
+    <column name="id_cliente" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="nombre" type="VARCHAR" size="50" required="true"/>
+    <column name="apellido" type="VARCHAR" size="50" required="true"/>
+    <column name="ruc" type="VARCHAR" size="13" required="true"/>
+    <column name="telefono" type="VARCHAR" size="15" required="true"/>
+    <column name="direccion" type="VARCHAR" size="100" required="true"/>
+    <column name="email" type="VARCHAR" size="50"/>
+    <column name="contacto" type="VARCHAR" size="70"/>
+    <column name="fecha_nacimiento" type="DATE"/>
+    <index name="id_clie">
+      <index-column name="id_cliente"/>
+    </index>
+  </table>
+  <table name="cuadre_caja">
+    <column name="id_cuadre_caja" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="id_persona" type="INTEGER" required="true"/>
+    <column name="id_caja" type="INTEGER" required="true"/>
+    <column name="fecha_hora_i" type="TIMESTAMP" required="true"/>
+    <column name="fecha_hora_f" type="TIMESTAMP" required="true"/>
+    <column name="base_efectivo" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="efectivo_inicial" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="efectivo_final" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="estado" type="VARCHAR" size="1" required="true"/>
+    <column name="ajuste" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="comentario" type="LONGVARCHAR" required="true"/>
+    <foreign-key foreignTable="caja" name="Rel_08" onDelete="restrict">
+      <reference local="id_caja" foreign="id_caja"/>
+    </foreign-key>
+    <foreign-key foreignTable="persona" name="Rel_09" onDelete="restrict">
+      <reference local="id_persona" foreign="id_persona"/>
+    </foreign-key>
+    <index name="id_cuad">
+      <index-column name="id_cuadre_caja"/>
+    </index>
+  </table>
+  <table name="detalle_factura">
+    <column name="id_detalle_factura" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="id_producto" type="INTEGER" required="true"/>
+    <column name="id_factura" type="INTEGER" required="true"/>
+    <column name="precio" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="costo" type="DECIMAL" size="10" scale="2" required="true"/>
+    <foreign-key foreignTable="factura" name="Rel_13" onDelete="restrict">
+      <reference local="id_factura" foreign="id_factura"/>
+    </foreign-key>
+    <foreign-key foreignTable="producto" name="Rel_16" onDelete="restrict">
+      <reference local="id_producto" foreign="id_producto"/>
+    </foreign-key>
+    <unique name="id_deta">
+      <unique-column name="id_detalle_factura"/>
+    </unique>
+  </table>
+  <table name="factura">
+    <column name="id_factura" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="id_cliente" type="INTEGER" required="true"/>
+    <column name="id_grupo" type="INTEGER" required="true"/>
+    <column name="id_mesa" type="INTEGER" required="true"/>
+    <column name="id_cuadre_caja" type="INTEGER" required="true"/>
+    <column name="no_factura" type="VARCHAR" size="20" required="true"/>
+    <column name="fecha_hora" type="TIMESTAMP" required="true"/>
+    <column name="sub_total" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="iva_porcentaje" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="base_iva" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="base_iva_0" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="iva_total" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="descuento" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="valor_total" type="DECIMAL" size="10" scale="2" required="true"/>
+    <foreign-key foreignTable="cuadre_caja" name="Rel_12" onDelete="restrict">
+      <reference local="id_cuadre_caja" foreign="id_cuadre_caja"/>
+    </foreign-key>
+    <foreign-key foreignTable="mesa" name="Rel_14" onDelete="restrict">
+      <reference local="id_mesa" foreign="id_mesa"/>
+    </foreign-key>
+    <foreign-key foreignTable="grupo" name="Rel_15" onDelete="restrict">
+      <reference local="id_grupo" foreign="id_grupo"/>
+    </foreign-key>
+    <foreign-key foreignTable="cliente" name="Rel_18" onDelete="restrict">
+      <reference local="id_cliente" foreign="id_cliente"/>
+    </foreign-key>
+    <index name="id_fact">
+      <index-column name="id_factura"/>
+    </index>
+  </table>
+  <table name="grupo">
+    <column name="id_grupo" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="descripcion" type="VARCHAR" size="70" required="true"/>
+    <column name="fecha_creacion" type="DATE" required="true"/>
+    <column name="estado" type="VARCHAR" size="1" required="true"/>
+    <column name="tipo" type="VARCHAR" size="1" required="true"/>
+    <index name="id_grup">
+      <index-column name="id_grupo"/>
+    </index>
+  </table>
+  <table name="ingreso_egreso">
+    <column name="id_ingreso_egreso" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="id_cuadre_caja" type="INTEGER" required="true"/>
+    <column name="fecha_hora" type="TIMESTAMP" required="true"/>
+    <column name="valor" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="tipo" type="VARCHAR" size="1" required="true"/>
+    <column name="comentario" type="LONGVARCHAR" required="true"/>
+    <column name="estado" type="VARCHAR" size="1" required="true"/>
+    <foreign-key foreignTable="cuadre_caja" name="Rel_17" onDelete="restrict">
+      <reference local="id_cuadre_caja" foreign="id_cuadre_caja"/>
+    </foreign-key>
+    <index name="id_ingr">
+      <index-column name="id_ingreso_egreso"/>
+    </index>
+  </table>
+  <table name="log">
+    <column name="id_log" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="id_persona" type="INTEGER" required="true"/>
+    <column name="fecha_hora" type="TIMESTAMP" required="true"/>
+    <column name="modulo" type="VARCHAR" size="15" required="true"/>
+    <column name="detalle" type="LONGVARCHAR" required="true"/>
+    <column name="accion" type="VARCHAR" size="1" required="true"/>
+    <foreign-key foreignTable="persona" name="Rel_05" onDelete="restrict">
+      <reference local="id_persona" foreign="id_persona"/>
+    </foreign-key>
+    <index name="id_log_">
+      <index-column name="id_log"/>
+    </index>
+  </table>
+  <table name="menu">
+    <column name="id_menu" type="INTEGER" primaryKey="true" required="true"/>
+    <column name="descripcion" type="VARCHAR" size="30" required="true"/>
+    <column name="id_menu_padre" type="INTEGER" required="true"/>
+    <column name="link" type="VARCHAR" size="100" required="true"/>
+    <column name="nivel" type="INTEGER" required="true"/>
+    <column name="orden" type="INTEGER" required="true"/>
+    <column name="estado" type="VARCHAR" size="1" required="true"/>
+    <index name="id_menu">
+      <index-column name="id_menu"/>
+    </index>
+  </table>
+  <table name="menu_persona">
+    <column name="id_menu_persona" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="id_menu" type="INTEGER" required="true"/>
+    <column name="id_persona" type="INTEGER" required="true"/>
+    <foreign-key foreignTable="persona" name="Rel_10" onDelete="restrict">
+      <reference local="id_persona" foreign="id_persona"/>
+    </foreign-key>
+    <foreign-key foreignTable="menu" name="Rel_11" onDelete="restrict">
+      <reference local="id_menu" foreign="id_menu"/>
+    </foreign-key>
+    <index name="id_menu">
+      <index-column name="id_menu_persona"/>
+    </index>
+  </table>
+  <table name="mesa">
+    <column name="id_mesa" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="descripcion" type="VARCHAR" size="20" required="true"/>
+    <column name="codigo" type="VARCHAR" size="10" required="true"/>
+    <column name="estado" type="VARCHAR" size="1" required="true"/>
+    <index name="id_mesa">
+      <index-column name="id_mesa"/>
+    </index>
+  </table>
+  <table name="persona">
+    <column name="id_persona" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="id_cargo" type="INTEGER" required="true"/>
+    <column name="nombre" type="VARCHAR" size="45" required="true"/>
+    <column name="apellido" type="VARCHAR" size="45" required="true"/>
+    <column name="email" type="VARCHAR" size="50" required="true"/>
+    <column name="identificacion" type="VARCHAR" size="13" required="true"/>
+    <column name="fecha_nacimiento" type="DATE"/>
+    <column name="estado" type="VARCHAR" size="1" required="true"/>
+    <column name="clave" type="VARCHAR" size="50" required="true"/>
+    <column name="fecha_ingreso" type="DATE" required="true"/>
+    <column name="fecha_salida" type="DATE"/>
+    <column name="autoriza_pago" type="VARCHAR" size="1" required="true"/>
+    <foreign-key foreignTable="cargo" name="Rel_07" onDelete="restrict">
+      <reference local="id_cargo" foreign="id_cargo"/>
+    </foreign-key>
+    <index name="id_pers">
+      <index-column name="id_persona"/>
+    </index>
+  </table>
+  <table name="producto">
+    <column name="id_producto" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="descripcion" type="VARCHAR" size="50" required="true"/>
+    <column name="tipo" type="VARCHAR" size="1" required="true" description="B =\g Bebida / P =\g Plato"/>
+    <column name="stock_handler" type="VARCHAR" size="1" required="true"/>
+    <column name="stock" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="costo" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="precio" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="fecha_ingreso" type="DATE" required="true"/>
+    <column name="estado" type="VARCHAR" size="1" required="true"/>
+    <column name="especificaciones" type="LONGVARCHAR"/>
+    <column name="imagen" type="VARCHAR" size="50"/>
+    <column name="paga_iva" type="VARCHAR" size="1" required="true"/>
+    <index name="id_prod">
+      <index-column name="id_producto"/>
+    </index>
+  </table>
+  <table name="orden">
+    <column name="id_orden" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="id_persona" type="INTEGER" required="true"/>
+    <column name="id_factura" type="INTEGER" required="true"/>
+    <column name="orden_numero" type="VARCHAR" size="15" required="true"/>
+    <foreign-key foreignTable="factura" name="Rel_14" onDelete="restrict">
+      <reference local="id_factura" foreign="id_factura"/>
+    </foreign-key>
+    <foreign-key foreignTable="persona" name="Rel_21" onDelete="restrict">
+      <reference local="id_persona" foreign="id_persona"/>
+    </foreign-key>
+    <index name="id_orde">
+      <index-column name="id_orden"/>
+    </index>
+  </table>
+  <table name="localizacion">
+    <column name="id_localizacion" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="nombre" type="VARCHAR" size="20" required="true"/>
+    <column name="output_device" type="VARCHAR" size="1" required="true" description="I =\g Impresora / P =\g Pantalla"/>
+    <column name="direccion_printer" type="VARCHAR" size="50" description="Direcci\243n IP"/>
+    <column name="visible" type="VARCHAR" size="1" required="true" description="Indica S o N la localizaci\243n es visible al momento de ingresar el usuario"/>
+    <column name="estado" type="VARCHAR" size="1" required="true" description="A =\g Activo / I =\g Inactivo"/>
+    <index name="id_loca">
+      <index-column name="id_localizacion"/>
+    </index>
+  </table>
+  <table name="mensaje">
+    <column name="id_mensaje" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="id_localizacion" type="INTEGER" required="true"/>
+    <column name="descripcion" type="VARCHAR" size="150" required="true"/>
+    <column name="estado" type="VARCHAR" size="1" required="true"/>
+    <foreign-key foreignTable="localizacion" name="Rel_15" onDelete="restrict">
+      <reference local="id_localizacion" foreign="id_localizacion"/>
+    </foreign-key>
+    <index name="id_mens">
+      <index-column name="id_mensaje"/>
+    </index>
+  </table>
+  <table name="persona_localizacion">
+    <column name="id_persona_localizacion" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="id_localizacion" type="INTEGER" required="true"/>
+    <column name="id_persona" type="INTEGER" required="true"/>
+    <foreign-key foreignTable="persona" name="Rel_16" onDelete="restrict">
+      <reference local="id_persona" foreign="id_persona"/>
+    </foreign-key>
+    <foreign-key foreignTable="localizacion" name="Rel_17" onDelete="restrict">
+      <reference local="id_localizacion" foreign="id_localizacion"/>
+    </foreign-key>
+    <index name="id_pelo">
+      <index-column name="id_persona_localizacion"/>
+    </index>
+  </table>
+  <table name="usuario_caja">
+    <column name="id_usuario_caja" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="id_persona" type="INTEGER" required="true"/>
+    <column name="id_caja" type="INTEGER" required="true"/>
+    <foreign-key foreignTable="caja" name="Rel_18" onDelete="restrict">
+      <reference local="id_caja" foreign="id_caja"/>
+    </foreign-key>
+    <foreign-key foreignTable="persona" name="Rel_19" onDelete="restrict">
+      <reference local="id_persona" foreign="id_persona"/>
+    </foreign-key>
+    <index name="id_usuar">
+      <index-column name="id_persona"/>
+    </index>
+  </table>
+  <table name="pago_efectivo">
+    <column name="id_pago_efectivo" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="id_persona" type="INTEGER" required="true"/>
+    <column name="id_autoriza" type="INTEGER" required="true"/>
+    <column name="id_cuadre_caja" type="INTEGER" required="true"/>
+    <column name="fecha_hora" type="TIMESTAMP" required="true"/>
+    <column name="valor" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="concepto" type="LONGVARCHAR" required="true"/>
+    <column name="receptor" type="VARCHAR" size="200" required="true"/>
+    <column name="estado" type="VARCHAR" size="1" required="true"/>
+    <foreign-key foreignTable="cuadre_caja" name="Rel_21" onDelete="restrict">
+      <reference local="id_cuadre_caja" foreign="id_cuadre_caja"/>
+    </foreign-key>
+    <foreign-key foreignTable="persona" name="Rel_22" onDelete="restrict">
+      <reference local="id_persona" foreign="id_persona"/>
+    </foreign-key>
+    <foreign-key foreignTable="persona" name="Rel_23" onDelete="restrict">
+      <reference local="id_autoriza" foreign="id_persona"/>
+    </foreign-key>
+    <index name="id_pago_efe">
+      <index-column name="id_pago_efectivo"/>
+    </index>
+  </table>
+  <table name="forma_pago">
+    <column name="id_forma_pago" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="descripcion" type="VARCHAR" size="50" required="true"/>
+    <column name="estado" type="VARCHAR" size="1" required="true"/>
+    <index name="idx_id_forma_pago">
+      <index-column name="id_forma_pago"/>
+    </index>
+  </table>
+  <table name="banco">
+    <column name="id_banco" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="descripcion" type="VARCHAR" size="150" required="true"/>
+    <column name="estado" type="VARCHAR" size="1" required="true"/>
+    <index name="id_banc">
+      <index-column name="id_banco"/>
+    </index>
+  </table>
+  <table name="tarjeta_credito">
+    <column name="id_tarjeta_credito" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="emisor" type="VARCHAR" size="100" required="true"/>
+    <column name="porcentaje_comision" type="DECIMAL" size="5" scale="2" required="true"/>
+    <column name="estado" type="VARCHAR" size="1" required="true"/>
+    <index name="id_tarj">
+      <index-column name="id_tarjeta_credito"/>
+    </index>
+  </table>
+  <table name="cliente_tarjeta">
+    <column name="id_cliente_tarjeta" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="id_tarjeta_credito" type="INTEGER" required="true"/>
+    <column name="id_cliente" type="INTEGER" required="true"/>
+    <column name="estado" type="VARCHAR" size="1" required="true"/>
+    <foreign-key foreignTable="cliente" name="Rel_24" onDelete="restrict">
+      <reference local="id_cliente" foreign="id_cliente"/>
+    </foreign-key>
+    <foreign-key foreignTable="tarjeta_credito" name="Rel_25" onDelete="restrict">
+      <reference local="id_tarjeta_credito" foreign="id_tarjeta_credito"/>
+    </foreign-key>
+    <index name="id_cliente_tar">
+      <index-column name="id_cliente_tarjeta"/>
+    </index>
+  </table>
+  <table name="pago">
+    <column name="id_pago" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="id_banco" type="INTEGER"/>
+    <column name="id_forma_pago" type="INTEGER" required="true"/>
+    <column name="id_cliente_tarjeta" type="INTEGER"/>
+    <column name="id_factura" type="INTEGER" required="true"/>
+    <column name="fecha_hora" type="TIMESTAMP" required="true"/>
+    <column name="valor" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="comision_tarjeta" type="DECIMAL" size="5" scale="2" required="true"/>
+    <column name="numero_chq" type="VARCHAR" size="20"/>
+    <foreign-key foreignTable="factura" name="Rel_26" onDelete="restrict">
+      <reference local="id_factura" foreign="id_factura"/>
+    </foreign-key>
+    <foreign-key foreignTable="cliente_tarjeta" name="Rel_27" onDelete="restrict">
+      <reference local="id_cliente_tarjeta" foreign="id_cliente_tarjeta"/>
+    </foreign-key>
+    <foreign-key foreignTable="forma_pago" name="Rel_28" onDelete="restrict">
+      <reference local="id_forma_pago" foreign="id_forma_pago"/>
+    </foreign-key>
+    <foreign-key foreignTable="banco" name="Rel_29" onDelete="restrict">
+      <reference local="id_banco" foreign="id_banco"/>
+    </foreign-key>
+    <index name="idx_id_pago">
+      <index-column name="id_pago"/>
+    </index>
+  </table>
+</database>

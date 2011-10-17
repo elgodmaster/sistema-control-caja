@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<toolbar>
+    <item id="nuevo" type="button" text="Nuevo Registro" img="nuevo.gif"/>
+    <item id="elimina" type="button" text="Elimina Registro" img="eliminar.gif"/>
+</toolbar>
