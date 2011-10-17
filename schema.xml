@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<database defaultIdMethod="native" name="taberna_colonial">
+<database defaultIdMethod="native" name="scc">
   <table name="caja">
     <column name="id_caja" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
     <column name="descripcion" type="VARCHAR" size="45" required="true"/>

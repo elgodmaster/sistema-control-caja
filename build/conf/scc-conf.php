@@ -4,7 +4,7 @@
 $conf = array (
   'datasources' => 
   array (
-    'scc' => 
+    'scc' =>
     array (
       'adapter' => 'mysql',
       'connection' => 
