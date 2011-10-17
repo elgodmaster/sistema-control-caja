@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<items>
+<item type="label" label="Datos Tarjeta de Crédito" labelWidth="180"/>
+<item type="settings" position="label-left" labelWidth="130"/>
+<item type="input" validate="NotEmpty" name="emisor" bind="emisor" label="Emisor" width="180"/>
+<item type="input" validate="NotEmpty" name="porcentaje_comision" bind="porcentaje_comision" label="Porcentaje Comisión" width="180"/>
+<item type="select" name="estado" bind="estado" label="Estado">
+    <option value="A" text="Activo"/>
+    <option value="I" text="Inactivo"/>
+</item>
+<item type="button" command="guardar" value="Guardar"/>
+</items>

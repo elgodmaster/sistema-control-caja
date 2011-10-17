@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<items>
+<item type="label" label="Datos Cargo"/>
+<item type="settings" position="label-left" labelWidth="120"/>
+<item type="input" validate="NotEmpty" name="descripcion" bind="descripcion" label="Descripción" width="180"/>
+<item type="select" name="estado" bind="estado" label="Estado">
+    <option value="A" text="Activo"/>
+    <option value="I" text="Inactivo"/>
+</item>
+<item type="button" command="guardar" value="Guardar"/>
+</items>

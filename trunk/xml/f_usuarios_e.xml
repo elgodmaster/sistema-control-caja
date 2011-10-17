@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<items>
+<item type="fieldset" label="Datos Usuario">
+<item type="settings" position="label-left" labelWidth="120"/>
+<item type="input" validate="NotEmpty" name="nombre" bind="nombre" label="Nombre" width="180"/>
+<item type="input" validate="NotEmpty" name="apellido" bind="apellido" label="Apellido" width="180"/>
+<item type="combo" name="cargo" bind="cargo" label="Cargo" width="180"/>
+<item type="calendar" validate="NotEmpty" name="fecha_ingreso_c" bind="fecha_ingreso_c" label="Fecha Ingreso" dateFormat="%Y-%m-%d" serverDateFormat="%Y-%m-%d"/>
+<item type="hidden" name="fecha_ingreso" bind="fecha_ingreso"/>
+<item type="calendar" name="fecha_salida_c" bind="fecha_salida_c" label="Fecha Salida" readonly="true" dateFormat="%Y-%m-%d" serverDateFormat="%Y-%m-%d"/>
+<item type="hidden" name="fecha_salida" bind="fecha_salida"/>
+<item type="input" validate="NotEmpty" name="email" bind="email" label="Correo Electrónico" width="180"/>
+<item type="input" validate="NotEmpty" name="identificacion" bind="identificacion" label="Identificación"/>
+<item type="input" validate="NotEmpty" name="fecha_nacimiento" bind="fecha_nacimiento" label="Fecha Nacimiento"/>
+<item type="password" name="clave" bind="clave" label="Clave"/>
+<item type="select" name="estado" bind="estado" label="Estado">
+    <option value="A" text="Activo"/>
+    <option value="I" text="Inactivo"/>
+</item>
+<item type="fieldset" label="Autoriza Pagos en Efectivo">
+    <item type="settings" position="label-right" labelWidth="120"/>
+    <item type="radio" name="autoriza_pago" bind="autoriza_pago" value="S" checked="1" label="Si"/>
+    <item type="radio" name="autoriza_pago" bind="autoriza_pago" value="N" label="No"/>
+</item>
+</item>
+<item type="button" command="guardar" value="Guardar"/>
+</items>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<items>
+<item type="label" label="Datos Producto"/>
+<item type="settings" position="label-left" labelWidth="120"/>
+<item type="select" name="tipo" bind="tipo" label="Tipo Producto">
+    <option value="B" text="Bebida"/>
+    <option value="P" text="Plato"/>
+</item>
+<item type="input" validate="NotEmpty" name="descripcion" bind="descripcion" label="Descripción" width="180"/>
+<item type="select" name="stock_handler" bind="stock_handler" label="Maneja Stock">
+    <option value="S" text="Si"/>
+    <option value="N" text="No"/>
+</item>
+<item type="input" validate="NotEmpty" name="stock" bind="stock" label="Stock"/>
+<item type="input" validate="NotEmpty" name="costo" bind="costo" label="Costo"/>
+<item type="input" validate="NotEmpty" name="precio" bind="precio" label="Precio"/>
+<item type="input" validate="NotEmpty" name="especificaciones" bind="especificaciones" label="Especificaciones Producto" rows="4"/>
+<item type="input" validate="NotEmpty" name="imagen" bind="imagen" label="Path Imagen"/>
+<item type="select" name="paga_iva" bind="paga_iva" label="Paga IVA">
+    <option value="S" text="Si"/>
+    <option value="N" text="No"/>
+</item>
+<item type="select" name="estado" bind="estado" label="Estado">
+    <option value="A" text="Activo"/>
+    <option value="I" text="Inactivo"/>
+</item>
+<item type="button" command="guardar" value="Guardar"/>
+</items>
