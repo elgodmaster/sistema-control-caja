@@ -113,11 +113,11 @@ ram;
             $gxml = "";
             $con = Propel::getConnection(TarjetaCreditoPeer::DATABASE_NAME);
             $tarjeta = TarjetaCreditoQuery::create()
-                    ->findPk($_REQUEST['gr_id']);
+                    ->findPk($_REQUEST[$_REQUEST['ids'].'_gr_id']);
             $emisor = $tarjeta->getEmisor();
             $con->beginTransaction();
             $tarjeta->delete();
-            Log::registraLog($idPersona,'Tarjeta','Tarjeta # '.$_REQUEST['gr_id'].': '.$emisor,'E',$con);
+            Log::registraLog($idPersona,'Tarjeta','Tarjeta # '.$_REQUEST[$_REQUEST['ids'].'_gr_id'].': '.$emisor,'E',$con);
             $con->commit();
             $gxml = '<data><action type="update" sid="'.$tarjeta->getIdTarjetaCredito().'" tid="'.$tarjeta->getIdTarjetaCredito().'"></action><action type="eli_ok"></action></data>';
         }

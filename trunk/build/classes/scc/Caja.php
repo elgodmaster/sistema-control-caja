@@ -11,7 +11,7 @@
  * application requirements.  This class will only be generated as
  * long as it does not already exist in the output directory.
  *
- * @package    propel.generator.ltc
+ * @package    propel.generator.scc
  */
 class Caja extends BaseCaja {
     
@@ -113,11 +113,11 @@ ram;
             $gxml = "";
             $con = Propel::getConnection(CajaPeer::DATABASE_NAME);
             $caja = CajaQuery::create()
-                    ->findPk($_REQUEST['gr_id']);
+                    ->findPk($_REQUEST[$_REQUEST['ids'].'_gr_id']);
             $descripcion = $caja->getDescripcion();
             $con->beginTransaction();
             $caja->delete();
-            Log::registraLog($idPersona,'Caja','Caja # '.$_REQUEST['gr_id'].': '.$descripcion,'E',$con);
+            Log::registraLog($idPersona,'Caja','Caja # '.$_REQUEST[$_REQUEST['ids'].'_gr_id'].': '.$descripcion,'E',$con);
             $con->commit();
             $gxml = '<data><action type="update" sid="'.$caja->getIdCaja().'" tid="'.$caja->getIdCaja().'"></action><action type="eli_ok"></action></data>';
         }

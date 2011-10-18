@@ -108,11 +108,11 @@ ram;
             $gxml = "";
             $con = Propel::getConnection(BancoPeer::DATABASE_NAME);
             $banco = BancoQuery::create()
-                    ->findPk($_REQUEST['gr_id']);
+                    ->findPk($_REQUEST[$_REQUEST['ids'].'_gr_id']);
             $descripcion = $banco->getDescripcion();
             $con->beginTransaction();
             $banco->delete();
-            Log::registraLog($idPersona,'Banco','Banco # '.$_REQUEST['gr_id'].': '.$descripcion,'E',$con);
+            Log::registraLog($idPersona,'Banco','Banco # '.$_REQUEST[$_REQUEST['ids'].'_gr_id'].': '.$descripcion,'E',$con);
             $con->commit();
             $gxml = '<data><action type="update" sid="'.$banco->getIdBanco().'" tid="'.$banco->getIdBanco().'"></action><action type="eli_ok"></action></data>';
         }

@@ -53,6 +53,7 @@ ram;
     
     static public function guardaLocalizacion($idPersona) {
         try {
+            $modulo = mb_convert_encoding("Localización","UTF-8","ISO-8859-1");
             $gxml = "";
             $con = Propel::getConnection(LocalizacionPeer::DATABASE_NAME);
             $localizacion = new Localizacion();
@@ -63,7 +64,7 @@ ram;
             $localizacion->setEstado($_REQUEST[$_REQUEST['ids'].'_estado']);
             $con->beginTransaction();
             $localizacion->save($con);
-            Log::registraLog($idPersona,'Localización','Localización # '.$localizacion->getIdLocalizacion().': '.$localizacion->getNombre(),'I',$con);
+            Log::registraLog($idPersona,$modulo,$modulo.' # '.$localizacion->getIdLocalizacion().': '.$localizacion->getNombre(),'I',$con);
             $con->commit();
             $gxml = '<data><action type="update" sid="'.$localizacion->getIdLocalizacion().'" tid="'.$localizacion->getIdLocalizacion().'"></action><action type="reg_ok"></action></data>';
         }
@@ -95,6 +96,7 @@ ram;
     
     static public function actualizarLocalizacion($idPersona) {
         try {
+            $modulo = mb_convert_encoding("Localización","UTF-8","ISO-8859-1");
             $gxml = "";
             $con = Propel::getConnection(LocalizacionPeer::DATABASE_NAME);
             $localizacion = LocalizacionQuery::create()
@@ -107,7 +109,7 @@ ram;
                 $localizacion->setEstado($_REQUEST[$_REQUEST['ids'].'_estado']);
                 $con->beginTransaction();
                 $localizacion->save($con);
-                Log::registraLog($idPersona,'Localización','Localización # '.$localizacion->getIdLocalizacion().': '.$localizacion->getNombre(),'M',$con);
+                Log::registraLog($idPersona,$modulo,$modulo.' # '.$localizacion->getIdLocalizacion().': '.$localizacion->getNombre(),'M',$con);
                 $con->commit();
                 $gxml = '<data><action type="update" sid="'.$localizacion->getIdLocalizacion().'" tid="'.$localizacion->getIdLocalizacion().'"></action><action type="act_ok"></action></data>';
             }
@@ -124,14 +126,15 @@ ram;
     
     static public function eliminarLocalizacion($idPersona) {
         try {
+            $modulo = mb_convert_encoding("Localización","UTF-8","ISO-8859-1");
             $gxml = "";
             $con = Propel::getConnection(LocalizacionPeer::DATABASE_NAME);
             $localizacion = LocalizacionQuery::create()
-                    ->findPk($_REQUEST['gr_id']);
+                    ->findPk($_REQUEST[$_REQUEST['ids'].'_gr_id']);
             $nombre = $localizacion->getNombre();
             $con->beginTransaction();
             $localizacion->delete();
-            Log::registraLog($idPersona,'Localización','Localización # '.$_REQUEST['gr_id'].': '.$nombre,'E',$con);
+            Log::registraLog($idPersona,$modulo,$modulo.' # '.$_REQUEST[$_REQUEST['ids'].'_gr_id'].': '.$nombre,'E',$con);
             $con->commit();
             $gxml = '<data><action type="update" sid="'.$localizacion->getIdLocalizacion().'" tid="'.$localizacion->getIdLocalizacion().'"></action><action type="eli_ok"></action></data>';
         }
