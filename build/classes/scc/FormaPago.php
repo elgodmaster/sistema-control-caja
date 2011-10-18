@@ -11,7 +11,7 @@
  * application requirements.  This class will only be generated as
  * long as it does not already exist in the output directory.
  *
- * @package    propel.generator.ltc
+ * @package    propel.generator.scc
  */
 class FormaPago extends BaseFormaPago {
     
@@ -108,11 +108,11 @@ ram;
             $gxml = "";
             $con = Propel::getConnection(FormaPagoPeer::DATABASE_NAME);
             $forma = FormaPagoQuery::create()
-                    ->findPk($_REQUEST['gr_id']);
+                    ->findPk($_REQUEST[$_REQUEST['ids'].'_gr_id']);
             $descripcion = $forma->getDescripcion();
             $con->beginTransaction();
             $forma->delete();
-            Log::registraLog($idPersona,'Forma','Forma # '.$_REQUEST['gr_id'].': '.$nombre,'E',$con);
+            Log::registraLog($idPersona,'Forma','Forma # '.$_REQUEST[$_REQUEST['ids'].'_gr_id'].': '.$nombre,'E',$con);
             $con->commit();
             $gxml = '<data><action type="update" sid="'.$forma->getIdFormaPago().'" tid="'.$forma->getIdFormaPago().'"></action><action type="eli_ok"></action></data>';
         }

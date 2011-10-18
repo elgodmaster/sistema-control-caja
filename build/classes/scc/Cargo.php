@@ -122,11 +122,11 @@ ram;
             $gxml = "";
             $con = Propel::getConnection(CargoPeer::DATABASE_NAME);
             $cargo = CargoQuery::create()
-                    ->findPk($_REQUEST['gr_id']);
+                    ->findPk($_REQUEST[$_REQUEST['ids'].'_gr_id']);
             $descripcion = $cargo->getDescripcion();
             $con->beginTransaction();
             $cargo->delete();
-            Log::registraLog($idPersona,'Cargo','Cargo # '.$_REQUEST['gr_id'].': '.$descripcion,'E',$con);
+            Log::registraLog($idPersona,'Cargo','Cargo # '.$_REQUEST[$_REQUEST['ids'].'_gr_id'].': '.$descripcion,'E',$con);
             $con->commit();
             $gxml = '<data><action type="update" sid="'.$cargo->getIdCargo().'" tid="'.$cargo->getIdCargo().'"></action><action type="eli_ok"></action></data>';
         }

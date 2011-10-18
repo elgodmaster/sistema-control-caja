@@ -141,11 +141,11 @@ ram;
             $gxml = "";
             $con = Propel::getConnection(ProductoPeer::DATABASE_NAME);
             $producto = ProductoQuery::create()
-                    ->findPk($_REQUEST['gr_id']);
+                    ->findPk($_REQUEST[$_REQUEST['ids'].'_gr_id']);
             $descripcion = $producto->getDescripcion();
             $con->beginTransaction();
             $producto->delete();
-            Log::registraLog($idPersona,'Producto','Producto # '.$_REQUEST['gr_id'].': '.$descripcion,'E',$con);
+            Log::registraLog($idPersona,'Producto','Producto # '.$_REQUEST[$_REQUEST['ids'].'_gr_id'].': '.$descripcion,'E',$con);
             $con->commit();
             $gxml = '<data><action type="update" sid="'.$producto->getIdProducto().'" tid="'.$producto->getIdProducto().'"></action><action type="eli_ok"></action></data>';
         }

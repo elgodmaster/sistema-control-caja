@@ -113,11 +113,11 @@ ram;
             $gxml = "";
             $con = Propel::getConnection(MesaPeer::DATABASE_NAME);
             $mesa = MesaQuery::create()
-                    ->findPk($_REQUEST['gr_id']);
+                    ->findPk($_REQUEST[$_REQUEST['ids'].'_gr_id']);
             $descripcion = $mesa->getDescripcion();
             $con->beginTransaction();
             $mesa->delete();
-            Log::registraLog($idPersona,'Mesa','Mesa # '.$_REQUEST['gr_id'].': '.$descripcion,'E',$con);
+            Log::registraLog($idPersona,'Mesa','Mesa # '.$_REQUEST[$_REQUEST['ids'].'_gr_id'].': '.$descripcion,'E',$con);
             $con->commit();
             $gxml = '<data><action type="update" sid="'.$mesa->getIdMesa().'" tid="'.$mesa->getIdMesa().'"></action><action type="eli_ok"></action></data>';
         }

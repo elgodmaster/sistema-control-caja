@@ -177,11 +177,11 @@ ram;
                 $gxml = "";
                 $con = Propel::getConnection(PersonaPeer::DATABASE_NAME);
                 $persona = PersonaQuery::create()
-                        ->findPk($_REQUEST['gr_id']);
+                        ->findPk($_REQUEST[$_REQUEST['ids'].'_gr_id']);
                 $nombre = $persona->getNombre()." ".$persona->getApellido();
                 $con->beginTransaction();
                 $persona->delete();
-                Log::registraLog($idPersona,'Persona','Persona # '.$_REQUEST['gr_id'].': '.$nombre,'E',$con);
+                Log::registraLog($idPersona,'Persona','Persona # '.$_REQUEST[$_REQUEST['ids'].'_gr_id'].': '.$nombre,'E',$con);
                 $con->commit();
                 $gxml = '<data><action type="update" sid="'.$persona->getIdPersona().'" tid="'.$persona->getIdPersona().'"></action><action type="eli_ok"></action></data>';
             }
