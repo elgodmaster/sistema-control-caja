@@ -3,10 +3,7 @@
     require_once 'includes/ac.php';
     require_once 'includes/interfaz.php';
     Header('Cache-Control: no-cache');
-    Header('Pragma: no-cache');
-    
-    $arbol_menu = mb_convert_encoding($persona_sesion->generaArbolOpciones(),"ISO-8859-1","UTF-8");
-    
+    Header('Pragma: no-cache');    
     $int_cod = $_REQUEST['int_cod'];
     $titulo1 = "titulo1_".$int_cod; 					$titulo1 = $$titulo1;
     $ancho = "ancho_".$int_cod; 					$ancho = $$ancho;
@@ -21,14 +18,11 @@
     $manejo_combo_nuevo = "manejo_combo_nuevo_".$int_cod;		$manejo_combo_nuevo = $$manejo_combo_nuevo;
     $manejo_combo_edicion = "manejo_combo_edicion_".$int_cod;		$manejo_combo_edicion = $$manejo_combo_edicion;
     $toolbar = "toolbar_".$int_cod;					$toolbar = $$toolbar;
-    $alto_ventana_opciones = "alto_ventana_opciones_".$int_cod;		$alto_ventana_opciones = $$alto_ventana_opciones;
-    $ancho_ventana_opciones = "ancho_ventana_opciones_".$int_cod;	$ancho_ventana_opciones = $$ancho_ventana_opciones;
-    $titulo_opciones = "titulo_opciones_".$int_cod;			$titulo_opciones = $$titulo_opciones;
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset="utf-8" />
-    <title>.::. Sistema de Caja LTC 1.0 .::.</title>
+    <title>.::. Sistema de Caja SCC 1.0 .::.</title>
     <!-- dhtmlx.js contains all necessary dhtmlx library javascript code -->
     <script src="codebase/dhtmlx.js" type="text/javascript"></script>
     <!-- dhtmlx.css contains styles definitions for all included components -->
@@ -133,18 +127,11 @@
 		    popupWindow.center();
 		    popupWindow.setModal(true);
 		    popupWindow.setText("<?=$titulo_nuevo?>"); //Valor Dinámico
-		    popupWindow.setIcon("list.gif","list.gif");
+		    popupWindow.setIcon("images/nuevo.gif","images/nuevo.gif");
 		    forma_nuevo = popupWindow.attachForm();
 		    forma_nuevo.loadStruct("xml/<?=$forma_nuevo?>",function(){
 			<?=$manejo_combo_nuevo?>
-			//var rafa = forma_nuevo.getCombo("cargo");
-			//alert(rafa);
-			//rafa.loadXMLString('<?=$opciones?>');
-			//forma_nuevo.getCombo("cargo").addOption(1,"rafa");
-			//forma_nuevo.setReadonly("cargo",true);
-			//forma_nuevo.getCombo("cargo").loadXMLString('<?=$opciones?>');
-			//forma_nuevo.getCombo("cargo").loadXML('midware.php?a=combo&b=cargo');
-			}); //Valor Dinámico
+		    }); //Valor Dinámico
 		    dpn = new dataProcessor("midware.php?a=insert&b=<?=$int_cod?>"); //Valor Dinámico
 		    dpn.setTransactionMode("POST", true);
 		    dpn.setUpdateMode("off");
@@ -160,7 +147,6 @@
 			else
 			    alert('Los datos marcados son obligatorios, o no tienen el formato correcto...!!!');
 		    });
-		    alert(popupWindow.getIcon());
 		}
 		if(id=="elimina") {
 		    if(grid.getSelectedRowId() != null) {
@@ -169,14 +155,6 @@
 		    else
 			alert('Debe seleccionar un registro para eliminar..!!');
 		}
-		/*if(id=="opciones_menu") {
-		    popupWindow = layout_principal.dhxWins.createWindow("opciones_menu_tree", 0, 0, <?=$ancho_ventana_opciones?>, <?=$alto_ventana_opciones?>); //Valor Dinámico
-		    popupWindow.center();
-		    popupWindow.setModal(true);
-		    popupWindow.setText("<?=$titulo_opciones?>"); //Valor Dinámico
-		    tree_opciones = popupWindow.attachTree();
-		    tree_opciones.loadXMLString('<?=$arbol_menu?>');
-		}*/
 	    });
         }) //Fin de Load Principal
     </script>

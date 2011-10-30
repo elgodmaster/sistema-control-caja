@@ -66,6 +66,7 @@ $ancho_ventana_nuevo_10 = "405";
 $alto_ventana_nuevo_10 = "460";
 $titulo_nuevo_10 = "Nuevo Usuario";
 $forma_nuevo_10 = "f_usuarios_n.xml";
+$forma_hidden_10 = "f_hidden.xml";
 $manejo_fecha_nuevo_10 = <<<ram
 forma_nuevo.setItemValue("fecha_ingreso",forma_nuevo.getCalendar("fecha_ingreso_c").getFormatedDate());
 ram;
@@ -81,16 +82,29 @@ $manejo_combo_edicion_10 = <<<ram
 forma_edicion.setReadonly("cargo",true);
 forma_edicion.getCombo("cargo").loadXML('midware.php?a=combo&b=cargo');
 ram;
-$toolbar_10 = "xml/toolbar_nuevo.xml";
+$toolbar_10 = "xml/toolbar_usuario.xml";
+$toolbar_sc_10 = "xml/toolbar_sc.xml";
 $clear_forma_edicion_10 = "forma_edicion.clear();";
-/*$clear_forma_edicion_10 = <<<ram
-forma_edicion.setItemValue("nombre","");
-forma_edicion.setItemValue("apellido","");
-forma_edicion.setItemValue("email","");
-forma_edicion.setItemValue("identificacion","");
-forma_edicion.setItemValue("fecha_nacimiento","");
-forma_edicion.setItemValue("clave","");
-ram;*/
+$alto_ventana_opciones_10 = "460";
+$ancho_ventana_opciones_10 = "405";
+$alto_ventana_localizaciones_10 = "460";
+$ancho_ventana_localizaciones_10 = "405";
+$alto_ventana_cajas_10 = "460";
+$ancho_ventana_cajas_10 = "405";
+$titulo_opciones_10 = "Opciones de Menú";
+$titulo_localizaciones_10 = "Localizaciones Usuario";
+$titulo_cajas_10 = "Cajas Usuario";
+
+//Clientes
+$titulo1_11 = "Mantenimiento de Clientes";
+$ancho_11 = "500";
+$forma_edicion_11 = "f_clientes.xml";
+$ancho_ventana_nuevo_11 = "350";
+$alto_ventana_nuevo_11 = "430";
+$titulo_nuevo_11 = "Nuevo Cliente";
+$forma_nuevo_11 = "f_clientes.xml";
+$clear_forma_edicion_11 = "forma_edicion.clear();";
+$toolbar_11 = "xml/toolbar_nuevo.xml";
 
 //Tarjetas de Crédito
 $titulo1_16 = "Mantenimiento de Tarjetas de Crédito";

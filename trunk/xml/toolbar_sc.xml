@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<toolbar>
+    <item id="guardar" type="button" text="Guardar" img="guardar.gif"/>
+</toolbar>

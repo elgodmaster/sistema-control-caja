@@ -16,13 +16,14 @@
 class Localizacion extends BaseLocalizacion {
     
     static public function listaLocalizaciones() {
+        $tilde_o = mb_convert_encoding("ón","UTF-8","ISO-8859-1");
         $gxml = <<<ram
 <rows>
 <head>
-<column width="100" type="ro" align="center" color="white" sort="na">Id Localización</column>
+<column width="90" type="ro" align="center" color="white" sort="na">Id Localizaci$tilde_o</column>
 <column width="150" type="ro" align="left" color="white" sort="na">Nombre</column>
-<column width="105" type="ro" align="center" color="white" sort="na">Tipo Dispositivo</column>
-<column width="65" type="ro" align="center" color="white" sort="na">Visible</column>
+<column width="135" type="ro" align="center" color="white" sort="na">Tipo Dispositivo</column>
+<column width="55" type="ro" align="center" color="white" sort="na">Visible</column>
 <column width="65" type="ro" align="center" color="white" sort="na">Estado</column>
 </head>
 ram;
@@ -32,13 +33,24 @@ ram;
         foreach($localizaciones as $localizacion) {
             $estado = "Inactiva";
             $visible = "NO";
-            $tipo_dispositivo = "Pantalla";
+            switch($localizacion->getOutputDevice()) {
+                case "M":
+                    $tipo_dispositivo = "Pantalla (Mensajes)";
+                    break;
+                case "C":
+                    $tipo_dispositivo = "Pantalla (Caja)";
+                    break;
+                case "E":
+                    $tipo_dispositivo = "Impresora (Mensajes)";
+                    break;
+                case "F":
+                    $tipo_dispositivo = "Impresora (Caja)";
+                    break;
+            }
             if($localizacion->getEstado() == 'A')
                 $estado = "Activa";
             if($localizacion->getVisible() == 'S')
                 $visible = "SI";
-            if($localizacion->getOutputDevice() == 'I')
-                $tipo_dispositivo = "Impresora";
             $gxml .= '<row id="'.$localizacion->getIdLocalizacion().'">';
             $gxml .= '<cell>'.$localizacion->getIdLocalizacion().'</cell>';
             $gxml .= '<cell>'.$localizacion->getNombre().'</cell>';

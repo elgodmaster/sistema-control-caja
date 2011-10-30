@@ -17,34 +17,213 @@ class Persona extends BasePersona {
     
     protected $arbol_xml;
     
-    public function generaArbolOpciones() {
-        if($this->getIdPersona() == 0) {
-            $this->arbol_xml = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>";
-            $this->arbol_xml .= '<tree id="0"><item text="Opciones" tooltip = "" select="1" open="1" id="main">';
-            $this->generaArbolOpcionesRecursiva(1);
-            $this->arbol_xml .= '</item></tree>';
+    public function generaArbolLocalizaciones($id_persona) {
+        $this->arbol_xml = "";
+        $this->arbol_xml .= '<tree id="0"><item text="Localizaciones" tooltip = "" select="1" open="1" id="main">';
+        $localizaciones = LocalizacionQuery::create()
+                        ->where('Localizacion.Estado = ?','A')
+                        ->where('Localizacion.OutputDevice IN ?',array('M','C'))
+                        ->find();
+        foreach($localizaciones as $localizacion) {
+            $cuenta = PersonaLocalizacionQuery::create()
+                    ->where('PersonaLocalizacion.IdPersona = ?',$id_persona)
+                    ->where('PersonaLocalizacion.IdLocalizacion = ?',$localizacion->getIdLocalizacion())
+                    ->count();
+            $checked = "";
+            if($cuenta) $checked = 'checked="1"';
+            $this->arbol_xml .= '<item text="'.$localizacion->getNombre().'" tooltip= "" id="'.$localizacion->getIdLocalizacion().'" '.$checked.'/>';
         }
+        $this->arbol_xml .= '</item></tree>';
         return $this->arbol_xml;
     }
     
-    private function generaArbolOpcionesRecursiva($nivel,$idMenuPadre = 0) {
-        if($this->getIdPersona() == 0) {
+    public function generaArbolCajas($id_persona) {
+        $this->arbol_xml = "";
+        $this->arbol_xml .= '<tree id="0"><item text="Cajas" tooltip = "" select="1" open="1" id="main">';
+        $caja = new Caja();
+        $cajas = CajaQuery::create()
+                ->where('Caja.Estado = ?','A')
+                ->find();
+        foreach($cajas as $caja) {
+            $cuenta = UsuarioCajaQuery::create()
+                    ->where('UsuarioCaja.IdPersona = ?',$id_persona)
+                    ->where('UsuarioCaja.IdCaja = ?',$caja->getIdCaja())
+                    ->count();
+            $checked = "";
+            if($cuenta) $checked = 'checked="1"';
+            $this->arbol_xml .= '<item text="'.$caja->getDescripcion().'" tooltip= "" id="'.$caja->getIdCaja().'" '.$checked.'/>';
+        }
+        $this->arbol_xml .= '</item></tree>';
+        return $this->arbol_xml;
+    }
+    
+    public function generaArbolOpciones($forma,$id_persona) {
+        /**
+         * $forma es un indicador de forma de construir arbol, con o sin checkboxes.
+         * valor 1 - Con Checkboxes
+         * valor 0 - Menú principal
+        */
+        $this->arbol_xml = "";
+        if(!$forma)
+            $this->arbol_xml = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>";
+        $this->arbol_xml .= '<tree id="0"><item text="Opciones" tooltip = "" select="1" open="1" id="main">';
+        if($forma)
+            $this->generaArbolOpcionesRecursivaOpciones(1,$id_persona);
+        else
+            $this->generaArbolOpcionesRecursivaMenu(1,$id_persona);
+        $this->arbol_xml .= '</item></tree>';
+        return $this->arbol_xml;
+    }
+    
+    private function generaArbolOpcionesRecursivaOpciones($nivel,$id_persona,$idMenuPadre = 0) {
+        $opciones = MenuQuery::create()
+                    ->where('Menu.Nivel = ?',$nivel)
+                    ->where('Menu.IdMenuPadre = ?',$idMenuPadre)
+                    ->where('Menu.Estado = ?','A')
+                    ->orderByOrden()
+                    ->find();
+        foreach($opciones as $opcion) {
+            if($opcion->getLink() == 'NA') {
+                $this->arbol_xml .= '<item text="'.$opcion->getDescripcion().'" tooltip = "" open="1" id="'.$opcion->getIdmenu().'">';
+                $this->generaArbolOpcionesRecursivaOpciones($opcion->getNivel() + 1,$id_persona,$opcion->getIdmenu());
+                $this->arbol_xml .= '</item>';
+            }
+            else {
+                $cuenta = MenuPersonaQuery::create()
+                            ->where('MenuPersona.IdMenu = ?',$opcion->getIdMenu())
+                            ->where('MenuPersona.IdPersona = ?',$id_persona)
+                            ->count();
+                $checked = '';
+                if($cuenta) $checked = 'checked="1"';
+                $this->arbol_xml .= '<item text="'.$opcion->getDescripcion().'" tooltip= "" id="'.$opcion->getIdmenu().'" '.$checked.'/>';
+            }
+        }
+    }
+    
+    private function generaArbolOpcionesRecursivaMenu($nivel,$id_persona,$idMenuPadre = 0) {
+        if($this->getIdPersona() == 0)
             $opciones = MenuQuery::create()
                         ->where('Menu.Nivel = ?',$nivel)
                         ->where('Menu.IdMenuPadre = ?',$idMenuPadre)
                         ->where('Menu.Estado = ?','A')
                         ->orderByOrden()
                         ->find();
-            foreach($opciones as $opcion) {
-                if($opcion->getLink() == 'NA') {
-                    $this->arbol_xml .= '<item text="'.$opcion->getDescripcion().'" tooltip = "" open="1" id="'.$opcion->getIdmenu().'">';
-                    $this->generaArbolOpcionesRecursiva($opcion->getNivel() + 1,$opcion->getIdmenu());
-                    $this->arbol_xml .= '</item>';
-                }
-                else
-                    $this->arbol_xml .= '<item text="'.$opcion->getDescripcion().'" tooltip= "" id="'.$opcion->getIdmenu().'"/>';
+        else
+            $opciones = MenuQuery::create()
+                        ->join('Menu.MenuPersona')
+                        ->where('MenuPersona.IdPersona = ?',$id_persona)
+                        ->where('Menu.Nivel = ?',$nivel)
+                        ->where('Menu.IdMenuPadre = ?',$idMenuPadre)
+                        ->where('Menu.Estado = ?','A')
+                        ->orderByOrden()
+                        ->find();
+        foreach($opciones as $opcion) {
+            if($opcion->getLink() == 'NA') {
+                $this->arbol_xml .= '<item text="'.$opcion->getDescripcion().'" tooltip = "" open="1" id="'.$opcion->getIdmenu().'">';
+                $this->generaArbolOpcionesRecursivaMenu($opcion->getNivel() + 1,$id_persona,$opcion->getIdmenu());
+                $this->arbol_xml .= '</item>';
+            }
+            else {
+                $this->arbol_xml .= '<item text="'.$opcion->getDescripcion().'" tooltip= "" id="'.$opcion->getIdmenu().'"/>';
             }
         }
+    }
+    
+    public function actualizaArbolOpcionesMenu($opciones,$id_persona) {
+        $gxml = "";
+        try {
+            $con = Propel::getConnection(PersonaPeer::DATABASE_NAME);
+            $persona = PersonaQuery::create()
+                    ->findPk($id_persona);
+            $opciones_array = split(',',$opciones);
+            for($i=0;$i<count($opciones_array);$i++) {
+                if($opciones_array[$i] != 'main') {
+                    $menu_persona = new MenuPersona();
+                    $menu_persona->setIdPersona($id_persona);
+                    $menu_persona->setIdMenu($opciones_array[$i]);
+                    $persona->addMenuPersona($menu_persona);
+                }
+            }
+            $con->beginTransaction();
+            $delete_opciones = MenuPersonaQuery::create()
+                            ->where('MenuPersona.IdPersona = ?',$id_persona)
+                            ->delete($con);
+            if(strlen(trim($opciones))) $persona->save($con);
+            Log::registraLog($id_persona,'Persona','Registro de opciones de menu para persona # '.$id_persona.': '.$persona->getNombre().' '.$persona->getApellido(),'O',$con);
+            $con->commit();
+            $gxml = '<data><action type="update" sid="'.$id_persona.'" tid="'.$id_persona.'"></action><action type="reg_ok"></action></data>';
+        }
+        catch(Exception $e) {
+            $con->rollBack();
+            Log::logError($e);
+            $gxml = '<data><action type="no_reg">No fue posible registrar las opciones de menu</action></data>';
+        }
+        return $gxml;
+    }
+    
+    public function actualizaArbolLocalizaciones($localizaciones,$id_persona) {
+        $gxml = "";
+        try {
+            $con = Propel::getConnection(PersonaPeer::DATABASE_NAME);
+            $persona = PersonaQuery::create()
+                    ->findPk($id_persona);
+            $localizaciones_array = split(',',$localizaciones);
+            for($i=0;$i<count($localizaciones_array);$i++) {
+                if($localizaciones_array[$i] != 'main') {
+                    $persona_localizacion = new PersonaLocalizacion();
+                    $persona_localizacion->setIdPersona($id_persona);
+                    $persona_localizacion->setIdLocalizacion($localizaciones_array[$i]);
+                    $persona->addPersonaLocalizacion($persona_localizacion);
+                }
+            }
+            $con->beginTransaction();
+            $delete_localizaciones = PersonaLocalizacionQuery::create()
+                            ->where('PersonaLocalizacion.IdPersona = ?',$id_persona)
+                            ->delete($con);
+            if(strlen(trim($localizaciones))) $persona->save($con);
+            Log::registraLog($id_persona,'Persona','Registro de localizaciones de usuario para persona # '.$id_persona.': '.$persona->getNombre().' '.$persona->getApellido(),'Z',$con);
+            $con->commit();
+            $gxml = '<data><action type="update" sid="'.$id_persona.'" tid="'.$id_persona.'"></action><action type="reg_ok"></action></data>';
+        }
+        catch(Exception $e) {
+            $con->rollBack();
+            Log::logError($e);
+            $gxml = '<data><action type="no_reg">No fue posible registrar las localizaciones de usuario</action></data>';
+        }
+        return $gxml;
+    }
+    
+    public function actualizaArbolCajas($cajas,$id_persona) {
+        $gxml = "";
+        try {
+            $con = Propel::getConnection(PersonaPeer::DATABASE_NAME);
+            $persona = new Persona();
+            $persona = PersonaQuery::create()
+                    ->findPk($id_persona);
+            $cajas_array = split(',',$cajas);
+            for($i=0;$i<count($cajas_array);$i++) {
+                if($cajas_array[$i] != 'main') {
+                    $usuario_caja = new UsuarioCaja();
+                    $usuario_caja->setIdPersona($id_persona);
+                    $usuario_caja->setIdCaja($cajas_array[$i]);
+                    $persona->addUsuarioCaja($usuario_caja);
+                }
+            }
+            $con->beginTransaction();
+            $delete_cajas = UsuarioCajaQuery::create()
+                            ->where('UsuarioCaja.IdPersona = ?',$id_persona)
+                            ->delete($con);
+            if(strlen(trim($cajas))) $persona->save($con);
+            Log::registraLog($id_persona,'Persona','Registro de cajas de usuario para persona # '.$id_persona.': '.$persona->getNombre().' '.$persona->getApellido(),'J',$con);
+            $con->commit();
+            $gxml = '<data><action type="update" sid="'.$id_persona.'" tid="'.$id_persona.'"></action><action type="reg_ok"></action></data>';
+        }
+        catch(Exception $e) {
+            $con->rollBack();
+            Log::logError($e);
+            $gxml = '<data><action type="no_reg">No fue posible registrar las cajas de usuario</action></data>';
+        }
+        return $gxml;
     }
     
     static public function listaPersonas() {
@@ -124,7 +303,7 @@ ram;
             $gxml .= '<email>'.$persona->getEmail().'</email>';
             $gxml .= '<identificacion>'.$persona->getIdentificacion().'</identificacion>';
             $gxml .= '<fecha_nacimiento>'.$persona->getFechaNacimiento('Y-m-d').'</fecha_nacimiento>';
-            $gxml .= '<clave>'.$persona->getClave().'</clave>';
+            $gxml .= '<clave></clave>';
             $gxml .= '<estado>'.$persona->getEstado().'</estado>';
             $gxml .= '<autoriza_pago>'.$persona->getAutorizaPago().'</autoriza_pago>';
             $gxml .= '</data>';
@@ -172,7 +351,7 @@ ram;
     }
     
     static public function eliminarPersona($idPersona) {
-        if($_REQUEST['gr_id'] != "0") {
+        if($_REQUEST[$_REQUEST['ids'].'_gr_id'] != "0") {
             try {
                 $gxml = "";
                 $con = Propel::getConnection(PersonaPeer::DATABASE_NAME);
