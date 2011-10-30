@@ -28,6 +28,9 @@
                 case "10":
                     $gxml = Persona::listaPersonas();
                     break;
+                case "11":
+                    $gxml = Cliente::listaClientes();
+                    break;
                 case "16":
                     $gxml = TarjetaCredito::listaTarjetasCredito();
                     break;
@@ -60,6 +63,9 @@
                     break;
                 case "10":
                     $gxml = Persona::guardaPersona($persona_sesion->getIdPersona());
+                    break;
+                case "11":
+                    $gxml = Cliente::guardaCliente($persona_sesion->getIdPersona());
                     break;
                 case "16":
                     $gxml = TarjetaCredito::guardaTarjetaCredito($persona_sesion->getIdPersona());
@@ -177,6 +183,42 @@
             switch($_REQUEST['b']) {
                 case "cargo":
                     $gxml = Cargo::listaCargosCombo();
+                    break;
+            }
+            break;
+        
+        //Trees
+        case "tree":
+            switch($_REQUEST['b']) {
+                case "menu_opciones":
+                    switch($_REQUEST['c']) {
+                        case "select":
+                            $gxml = $persona_sesion->generaArbolOpciones(1,$_REQUEST['id']);
+                            break;
+                        case "update":
+                            $gxml = $persona_sesion->actualizaArbolOpcionesMenu($_REQUEST[$_REQUEST['ids'].'_campo'],$_REQUEST['id']);
+                            break;
+                    }
+                    break;
+                case "localizaciones":
+                    switch($_REQUEST['c']) {
+                        case "select":
+                            $gxml = $persona_sesion->generaArbolLocalizaciones($_REQUEST['id']);
+                            break;
+                        case "update":
+                            $gxml = $persona_sesion->actualizaArbolLocalizaciones($_REQUEST[$_REQUEST['ids'].'_campo'],$_REQUEST['id']);
+                            break;
+                    }
+                    break;
+                case "cajas":
+                    switch($_REQUEST['c']) {
+                        case "select":
+                            $gxml = $persona_sesion->generaArbolCajas($_REQUEST['id']);
+                            break;
+                        case "update":
+                            $gxml = $persona_sesion->actualizaArbolCajas($_REQUEST[$_REQUEST['ids'].'_campo'],$_REQUEST['id']);
+                            break;
+                    }
                     break;
             }
             break;

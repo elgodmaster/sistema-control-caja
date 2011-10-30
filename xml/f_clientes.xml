@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<items>
+<item type="label" label="Datos Cliente"/>
+<item type="settings" position="label-left" labelWidth="120"/>
+<item type="input" validate="NotEmpty" name="nombre" bind="nombre" label="Nombre"/>
+<item type="input" validate="NotEmpty" name="apellido" bind="apellido" label="Apellido"/>
+<item type="input" validate="NotEmpty" name="ruc" bind="ruc" label="RUC"/>
+<item type="input" validate="NotEmpty" name="telefono" bind="telefono" label="Teléfono"/>
+<item type="input" validate="NotEmpty" name="direccion" bind="direccion" label="Dirección" rows="4"/>
+<item type="input" validate="NotEmpty" name="correo" bind="correo" label="Correo Electrónico"/>
+<item type="input" validate="NotEmpty" name="contacto" bind="contacto" label="Contacto"/>
+<item type="input" validate="ValidDate" name="fechanac" bind="fechanac" label="Fecha de Nacimiento"/>
+<item type="button" command="guardar" value="Guardar"/>
+</items>

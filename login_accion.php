@@ -7,6 +7,8 @@ try {
             ->where('Persona.Clave = ?',md5($_REQUEST['clave']))
             ->findOne();
     if($persona) {
+        $con = Propel::getConnection(PersonaPeer::DATABASE_NAME);
+        Log::registraLog($persona->getIdpersona(),'Login','Ingreso al sistema '.$persona->getIdpersona().': '.$persona->getNombre().' '.$persona->getApellido(),'L',$con);
         $_SESSION['persona_sesion'] = $persona;
         $_SESSION['persona_sesion_id'] = $persona->getIdpersona();
         header('location: mapp.php');

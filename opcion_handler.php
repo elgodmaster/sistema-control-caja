@@ -19,11 +19,11 @@ require_once 'includes/ac.php';
  10 => Usuarios
 */
 switch($_REQUEST['id']) {
-    /*case "10":
-        header("location: _handler.php");
-        break;*/
+    case "10":
+        header("location: usuario_handler.php?int_cod=".$_REQUEST['id']);
+        break;
     default:
-        header("location: i_handler.php?int_cod=".$_REQUEST['id']);
+        header("location: interfaz_handler.php?int_cod=".$_REQUEST['id']);
         break;
 }
 Propel::close();

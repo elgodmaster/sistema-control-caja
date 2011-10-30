@@ -4,8 +4,10 @@
 <item type="settings" position="label-left" labelWidth="120"/>
 <item type="input" validate="NotEmpty" name="nombre" bind="nombre" label="Nombre"/>
 <item type="select" name="tipo_dispositivo" bind="tipo_dispositivo" label="Tipo Dispositivo">
-    <option value="P" text="Pantalla"/>
-    <option value="I" text="Impresora"/>
+    <option value="M" text="Pantalla (Mensajes)"/>
+    <option value="C" text="Pantalla (Caja)"/>
+    <option value="E" text="Impresora (Mensajes)"/>
+    <option value="F" text="Impresora (Caja)"/>
 </item>
 <item type="input" name="direccion_printer" bind="direccion_printer" label="IP Impresora"/>
 <item type="select" name="visible" bind="visible" label="Localización Visible">

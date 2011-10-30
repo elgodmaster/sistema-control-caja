@@ -3,7 +3,7 @@
     require_once 'includes/ac.php';
     Header('Cache-Control: no-cache');
     Header('Pragma: no-cache');
-    $arbol_menu = mb_convert_encoding($persona_sesion->generaArbolOpciones(),"ISO-8859-1","UTF-8");
+    $arbol_menu = mb_convert_encoding($persona_sesion->generaArbolOpciones(0,$persona_sesion->getIdPersona()),"ISO-8859-1","UTF-8");
     $usuario = mb_convert_encoding($persona_sesion->getNombre()." ".$persona_sesion->getApellido(),"ISO-8859-1","UTF-8");
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -45,12 +45,14 @@
             layout_principal.cells("a").showHeader();
 	    toolbar_principal.attachEvent("onClick",function(id){
 		if(id=="salir")
-		    window.location = "login.php";
+		    window.location = "exit.php";
 	    });
             tree_opciones.attachEvent("onClick",function(id_opcion) {
                 layout_secundario.cells("b").attachURL('opcion_handler.php?id='+id_opcion);
             });
-        }) //Fin de Load Principal
+	    status_bar = layout_principal.attachStatusBar();
+	    status_bar.setText('Rafa');
+        }); //Fin de Load Principal
     </script>
 </head>
 <body>
