@@ -26,12 +26,12 @@ $clear_forma_edicion_5 = "forma_edicion.clear();";
 $toolbar_5 = "xml/toolbar_nuevo.xml";
 
 //Localizaciones
-$titulo1_6 = "Configuración de Localizaciones";
+$titulo1_6 = "Configuración de Terminales";
 $ancho_6 = "500";
 $forma_edicion_6 = "f_localizaciones.xml";
 $ancho_ventana_nuevo_6 = "350";
 $alto_ventana_nuevo_6 = "250";
-$titulo_nuevo_6 = "Nueva Localización";
+$titulo_nuevo_6 = "Nueva Terminal";
 $forma_nuevo_6 = "f_localizaciones.xml";
 $clear_forma_edicion_6 = "forma_edicion.clear();";
 $toolbar_6 = "xml/toolbar_nuevo.xml";
@@ -63,7 +63,7 @@ $titulo1_10 = "Mantenimiento de Usuarios";
 $ancho_10 = "500";
 $forma_edicion_10 = "f_usuarios_e.xml";
 $ancho_ventana_nuevo_10 = "405";
-$alto_ventana_nuevo_10 = "460";
+$alto_ventana_nuevo_10 = "510";
 $titulo_nuevo_10 = "Nuevo Usuario";
 $forma_nuevo_10 = "f_usuarios_n.xml";
 $forma_hidden_10 = "f_hidden.xml";
@@ -92,7 +92,7 @@ $ancho_ventana_localizaciones_10 = "405";
 $alto_ventana_cajas_10 = "460";
 $ancho_ventana_cajas_10 = "405";
 $titulo_opciones_10 = "Opciones de Menú";
-$titulo_localizaciones_10 = "Localizaciones Usuario";
+$titulo_localizaciones_10 = "Terminales Usuario";
 $titulo_cajas_10 = "Cajas Usuario";
 
 //Clientes

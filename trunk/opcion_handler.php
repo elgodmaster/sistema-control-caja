@@ -17,10 +17,15 @@ require_once 'includes/ac.php';
  14 => Grupos
  15 => Ingresos & Egresos
  10 => Usuarios
+ 
+ 30 => Registro Efectivo Caja
 */
 switch($_REQUEST['id']) {
     case "10":
         header("location: usuario_handler.php?int_cod=".$_REQUEST['id']);
+        break;
+    case "30":
+        header("location: registro_efectivo.php?int_cod=".$_REQUEST['id']);
         break;
     default:
         header("location: interfaz_handler.php?int_cod=".$_REQUEST['id']);

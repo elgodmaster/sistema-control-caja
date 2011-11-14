@@ -18,6 +18,8 @@
  * @method     PersonaQuery orderByFechaIngreso($order = Criteria::ASC) Order by the fecha_ingreso column
  * @method     PersonaQuery orderByFechaSalida($order = Criteria::ASC) Order by the fecha_salida column
  * @method     PersonaQuery orderByAutorizaPago($order = Criteria::ASC) Order by the autoriza_pago column
+ * @method     PersonaQuery orderByAdministrador($order = Criteria::ASC) Order by the administrador column
+ * @method     PersonaQuery orderByControlCajas($order = Criteria::ASC) Order by the control_cajas column
  *
  * @method     PersonaQuery groupByIdPersona() Group by the id_persona column
  * @method     PersonaQuery groupByIdCargo() Group by the id_cargo column
@@ -31,6 +33,8 @@
  * @method     PersonaQuery groupByFechaIngreso() Group by the fecha_ingreso column
  * @method     PersonaQuery groupByFechaSalida() Group by the fecha_salida column
  * @method     PersonaQuery groupByAutorizaPago() Group by the autoriza_pago column
+ * @method     PersonaQuery groupByAdministrador() Group by the administrador column
+ * @method     PersonaQuery groupByControlCajas() Group by the control_cajas column
  *
  * @method     PersonaQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method     PersonaQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -91,6 +95,8 @@
  * @method     Persona findOneByFechaIngreso(string $fecha_ingreso) Return the first Persona filtered by the fecha_ingreso column
  * @method     Persona findOneByFechaSalida(string $fecha_salida) Return the first Persona filtered by the fecha_salida column
  * @method     Persona findOneByAutorizaPago(string $autoriza_pago) Return the first Persona filtered by the autoriza_pago column
+ * @method     Persona findOneByAdministrador(string $administrador) Return the first Persona filtered by the administrador column
+ * @method     Persona findOneByControlCajas(string $control_cajas) Return the first Persona filtered by the control_cajas column
  *
  * @method     array findByIdPersona(int $id_persona) Return Persona objects filtered by the id_persona column
  * @method     array findByIdCargo(int $id_cargo) Return Persona objects filtered by the id_cargo column
@@ -104,6 +110,8 @@
  * @method     array findByFechaIngreso(string $fecha_ingreso) Return Persona objects filtered by the fecha_ingreso column
  * @method     array findByFechaSalida(string $fecha_salida) Return Persona objects filtered by the fecha_salida column
  * @method     array findByAutorizaPago(string $autoriza_pago) Return Persona objects filtered by the autoriza_pago column
+ * @method     array findByAdministrador(string $administrador) Return Persona objects filtered by the administrador column
+ * @method     array findByControlCajas(string $control_cajas) Return Persona objects filtered by the control_cajas column
  *
  * @package    propel.generator.scc.om
  */
@@ -601,6 +609,62 @@ abstract class BasePersonaQuery extends ModelCriteria
 			}
 		}
 		return $this->addUsingAlias(PersonaPeer::AUTORIZA_PAGO, $autorizaPago, $comparison);
+	}
+
+	/**
+	 * Filter the query on the administrador column
+	 * 
+	 * Example usage:
+	 * <code>
+	 * $query->filterByAdministrador('fooValue');   // WHERE administrador = 'fooValue'
+	 * $query->filterByAdministrador('%fooValue%'); // WHERE administrador LIKE '%fooValue%'
+	 * </code>
+	 *
+	 * @param     string $administrador The value to use as filter.
+	 *              Accepts wildcards (* and % trigger a LIKE)
+	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+	 *
+	 * @return    PersonaQuery The current query, for fluid interface
+	 */
+	public function filterByAdministrador($administrador = null, $comparison = null)
+	{
+		if (null === $comparison) {
+			if (is_array($administrador)) {
+				$comparison = Criteria::IN;
+			} elseif (preg_match('/[\%\*]/', $administrador)) {
+				$administrador = str_replace('*', '%', $administrador);
+				$comparison = Criteria::LIKE;
+			}
+		}
+		return $this->addUsingAlias(PersonaPeer::ADMINISTRADOR, $administrador, $comparison);
+	}
+
+	/**
+	 * Filter the query on the control_cajas column
+	 * 
+	 * Example usage:
+	 * <code>
+	 * $query->filterByControlCajas('fooValue');   // WHERE control_cajas = 'fooValue'
+	 * $query->filterByControlCajas('%fooValue%'); // WHERE control_cajas LIKE '%fooValue%'
+	 * </code>
+	 *
+	 * @param     string $controlCajas The value to use as filter.
+	 *              Accepts wildcards (* and % trigger a LIKE)
+	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+	 *
+	 * @return    PersonaQuery The current query, for fluid interface
+	 */
+	public function filterByControlCajas($controlCajas = null, $comparison = null)
+	{
+		if (null === $comparison) {
+			if (is_array($controlCajas)) {
+				$comparison = Criteria::IN;
+			} elseif (preg_match('/[\%\*]/', $controlCajas)) {
+				$controlCajas = str_replace('*', '%', $controlCajas);
+				$comparison = Criteria::LIKE;
+			}
+		}
+		return $this->addUsingAlias(PersonaPeer::CONTROL_CAJAS, $controlCajas, $comparison);
 	}
 
 	/**

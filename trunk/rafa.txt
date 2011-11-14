@@ -1,1 +1,0 @@
-a:4:{s:1:"a";s:6:"select";s:1:"b";s:2:"11";s:2:"id";s:1:"1";s:9:"PHPSESSID";s:26:"ahestbqup8ilts695g3s75o9j0";}

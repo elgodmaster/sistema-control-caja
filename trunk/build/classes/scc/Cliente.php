@@ -68,5 +68,80 @@ ram;
         }
         return $gxml;
     }
+    
+    static public function seleccionarCliente($idCliente) {
+        try {
+            $cliente = ClienteQuery::create()
+                        ->findPk($idCliente);
+            $gxml = '<data>';
+            $gxml .= '<nombre>'.$cliente->getNombre().'</nombre>';
+            $gxml .= '<apellido>'.$cliente->getApellido().'</apellido>';
+            $gxml .= '<ruc>'.$cliente->getRuc().'</ruc>';
+            $gxml .= '<telefono>'.$cliente->getTelefono().'</telefono>';
+            $gxml .= '<direccion>'.$cliente->getDireccion().'</direccion>';
+            $gxml .= '<correo>'.$cliente->getEmail().'</correo>';
+            $gxml .= '<contacto>'.$cliente->getContacto().'</contacto>';
+            $gxml .= '<fechanac>'.$cliente->getFechaNacimiento('Y-m-d').'</fechanac>';
+            $gxml .= '</data>';
+        }
+        catch(Exception $e) {
+            Log::logError($e);
+        }
+        return $gxml;
+    }
+    
+    static public function actualizarCliente($idPersona) {
+        try {
+            $gxml = "";
+            $con = Propel::getConnection(ClientePeer::DATABASE_NAME);
+            $cliente = ClienteQuery::create()
+                    ->findPk($_REQUEST['ids']);
+            if($cliente) {
+                $cliente->setNombre($_REQUEST[$_REQUEST['ids'].'_nombre']);
+                $cliente->setApellido($_REQUEST[$_REQUEST['ids'].'_apellido']);
+                $cliente->setRuc($_REQUEST[$_REQUEST['ids'].'_ruc']);
+                $cliente->setTelefono($_REQUEST[$_REQUEST['ids'].'_telefono']);
+                $cliente->setDireccion($_REQUEST[$_REQUEST['ids'].'_direccion']);
+                $cliente->setEmail($_REQUEST[$_REQUEST['ids'].'_correo']);
+                $cliente->setContacto($_REQUEST[$_REQUEST['ids'].'_contacto']);
+                $cliente->setFechaNacimiento($_REQUEST[$_REQUEST['ids'].'_fechanac']);
+                $con->beginTransaction();
+                $cliente->save($con);
+                Log::registraLog($idPersona,'Cliente','Cliente # '.$cliente->getIdCliente().': '.$cliente->getIdCliente(),'M',$con);
+                $con->commit();
+                $gxml = '<data><action type="update" sid="'.$cliente->getIdCliente().'" tid="'.$cliente->getIdCliente().'"></action><action type="act_ok"></action></data>';
+            }
+            else
+                $gxml = '<data><action type="no_act">No fue posible actualizar el cliente</action></data>';
+        }
+        catch(Exception $e) {
+            $con->rollBack();
+            Log::logError($e);
+            $gxml = '<data><action type="no_act">No fue posible actualizar el cliente</action></data>';
+        }
+        return $gxml;
+    }
+    
+    static public function eliminarCliente($idPersona) {
+        try {
+            $gxml = "";
+            $con = Propel::getConnection(ClientePeer::DATABASE_NAME);
+            $cliente = new Cliente();
+            $cliente = ClienteQuery::create()
+                    ->findPk($_REQUEST[$_REQUEST['ids'].'_gr_id']);
+            $nombre = $cliente->getNombre()." ".$cliente->getApellido();
+            $con->beginTransaction();
+            $cliente->delete();
+            Log::registraLog($idPersona,'Cliente','Cliente # '.$_REQUEST[$_REQUEST['ids'].'_gr_id'].': '.$nombre,'E',$con);
+            $con->commit();
+            $gxml = '<data><action type="update" sid="'.$cliente->getIdCliente().'" tid="'.$cliente->getIdCliente().'"></action><action type="eli_ok"></action></data>';
+        }
+        catch(Exception $e) {
+            $con->rollBack();
+            Log::logError($e);
+            $gxml = '<data><action type="no_eli">No fue posible eliminar el cliente</action></data>';
+        }
+        return $gxml;
+    }
 
 } // Cliente

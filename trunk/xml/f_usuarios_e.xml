@@ -22,6 +22,10 @@
     <item type="radio" name="autoriza_pago" bind="autoriza_pago" value="S" checked="1" label="Si"/>
     <item type="radio" name="autoriza_pago" bind="autoriza_pago" value="N" label="No"/>
 </item>
+<item type="fieldset" label="Accesos">
+    <item type="checkbox" name="administrador" bind="administrador" value="1" label="Administrador"/>
+    <item type="checkbox" name="control_cajas" bind="control_cajas" value="1" label="Cajas"/>
+</item>
 </item>
 <item type="button" command="guardar" value="Guardar"/>
 </items>

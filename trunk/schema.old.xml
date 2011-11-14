@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<database defaultIdMethod="native" name="taberna_colonial">
+<database defaultIdMethod="native" name="scc">
   <table name="caja">
     <column name="id_caja" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
     <column name="descripcion" type="VARCHAR" size="45" required="true"/>
@@ -59,6 +59,7 @@
     <column name="id_factura" type="INTEGER" required="true"/>
     <column name="precio" type="DECIMAL" size="10" scale="2" required="true"/>
     <column name="costo" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="cantidad" type="INTEGER" required="true"/>
     <foreign-key foreignTable="factura" name="Rel_13" onDelete="restrict">
       <reference local="id_factura" foreign="id_factura"/>
     </foreign-key>
@@ -71,10 +72,8 @@
   </table>
   <table name="factura">
     <column name="id_factura" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="id_orden" type="INTEGER" required="true"/>
     <column name="id_cliente" type="INTEGER" required="true"/>
-    <column name="id_grupo" type="INTEGER" required="true"/>
-    <column name="id_mesa" type="INTEGER" required="true"/>
-    <column name="id_cuadre_caja" type="INTEGER" required="true"/>
     <column name="no_factura" type="VARCHAR" size="20" required="true"/>
     <column name="fecha_hora" type="TIMESTAMP" required="true"/>
     <column name="sub_total" type="DECIMAL" size="10" scale="2" required="true"/>
@@ -84,17 +83,11 @@
     <column name="iva_total" type="DECIMAL" size="10" scale="2" required="true"/>
     <column name="descuento" type="DECIMAL" size="10" scale="2" required="true"/>
     <column name="valor_total" type="DECIMAL" size="10" scale="2" required="true"/>
-    <foreign-key foreignTable="cuadre_caja" name="Rel_12" onDelete="restrict">
-      <reference local="id_cuadre_caja" foreign="id_cuadre_caja"/>
-    </foreign-key>
-    <foreign-key foreignTable="mesa" name="Rel_14" onDelete="restrict">
-      <reference local="id_mesa" foreign="id_mesa"/>
-    </foreign-key>
-    <foreign-key foreignTable="grupo" name="Rel_15" onDelete="restrict">
-      <reference local="id_grupo" foreign="id_grupo"/>
-    </foreign-key>
     <foreign-key foreignTable="cliente" name="Rel_18" onDelete="restrict">
       <reference local="id_cliente" foreign="id_cliente"/>
+    </foreign-key>
+    <foreign-key foreignTable="orden" name="Rel_38" onDelete="restrict">
+      <reference local="id_orden" foreign="id_orden"/>
     </foreign-key>
     <index name="id_fact">
       <index-column name="id_factura"/>
@@ -102,10 +95,18 @@
   </table>
   <table name="grupo">
     <column name="id_grupo" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="id_orden" type="INTEGER" required="true"/>
+    <column name="id_mesa" type="INTEGER" required="true"/>
     <column name="descripcion" type="VARCHAR" size="70" required="true"/>
     <column name="fecha_creacion" type="DATE" required="true"/>
     <column name="estado" type="VARCHAR" size="1" required="true"/>
     <column name="tipo" type="VARCHAR" size="1" required="true"/>
+    <foreign-key foreignTable="mesa" name="Rel_36" onDelete="restrict">
+      <reference local="id_mesa" foreign="id_mesa"/>
+    </foreign-key>
+    <foreign-key foreignTable="orden" name="Rel_37" onDelete="restrict">
+      <reference local="id_orden" foreign="id_orden"/>
+    </foreign-key>
     <index name="id_grup">
       <index-column name="id_grupo"/>
     </index>
@@ -213,14 +214,14 @@
   </table>
   <table name="orden">
     <column name="id_orden" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="id_cuadre_caja" type="INTEGER" required="true"/>
     <column name="id_persona" type="INTEGER" required="true"/>
-    <column name="id_factura" type="INTEGER" required="true"/>
-    <column name="orden_numero" type="VARCHAR" size="15" required="true"/>
-    <foreign-key foreignTable="factura" name="Rel_14" onDelete="restrict">
-      <reference local="id_factura" foreign="id_factura"/>
-    </foreign-key>
-    <foreign-key foreignTable="persona" name="Rel_21" onDelete="restrict">
+    <column name="fecha_hora" type="TIMESTAMP" required="true"/>
+    <foreign-key foreignTable="persona" name="Rel_30" onDelete="restrict">
       <reference local="id_persona" foreign="id_persona"/>
+    </foreign-key>
+    <foreign-key foreignTable="cuadre_caja" name="Rel_39" onDelete="restrict">
+      <reference local="id_cuadre_caja" foreign="id_cuadre_caja"/>
     </foreign-key>
     <index name="id_orde">
       <index-column name="id_orden"/>
@@ -325,26 +326,11 @@
       <index-column name="id_tarjeta_credito"/>
     </index>
   </table>
-  <table name="cliente_tarjeta">
-    <column name="id_cliente_tarjeta" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
-    <column name="id_tarjeta_credito" type="INTEGER" required="true"/>
-    <column name="id_cliente" type="INTEGER" required="true"/>
-    <column name="estado" type="VARCHAR" size="1" required="true"/>
-    <foreign-key foreignTable="cliente" name="Rel_24" onDelete="restrict">
-      <reference local="id_cliente" foreign="id_cliente"/>
-    </foreign-key>
-    <foreign-key foreignTable="tarjeta_credito" name="Rel_25" onDelete="restrict">
-      <reference local="id_tarjeta_credito" foreign="id_tarjeta_credito"/>
-    </foreign-key>
-    <index name="id_cliente_tar">
-      <index-column name="id_cliente_tarjeta"/>
-    </index>
-  </table>
   <table name="pago">
     <column name="id_pago" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="id_tarjeta_credito" type="INTEGER" required="true"/>
     <column name="id_banco" type="INTEGER"/>
     <column name="id_forma_pago" type="INTEGER" required="true"/>
-    <column name="id_cliente_tarjeta" type="INTEGER"/>
     <column name="id_factura" type="INTEGER" required="true"/>
     <column name="fecha_hora" type="TIMESTAMP" required="true"/>
     <column name="valor" type="DECIMAL" size="10" scale="2" required="true"/>
@@ -353,17 +339,42 @@
     <foreign-key foreignTable="factura" name="Rel_26" onDelete="restrict">
       <reference local="id_factura" foreign="id_factura"/>
     </foreign-key>
-    <foreign-key foreignTable="cliente_tarjeta" name="Rel_27" onDelete="restrict">
-      <reference local="id_cliente_tarjeta" foreign="id_cliente_tarjeta"/>
-    </foreign-key>
     <foreign-key foreignTable="forma_pago" name="Rel_28" onDelete="restrict">
       <reference local="id_forma_pago" foreign="id_forma_pago"/>
     </foreign-key>
     <foreign-key foreignTable="banco" name="Rel_29" onDelete="restrict">
       <reference local="id_banco" foreign="id_banco"/>
     </foreign-key>
+    <foreign-key foreignTable="tarjeta_credito" name="Rel_35" onDelete="restrict">
+      <reference local="id_tarjeta_credito" foreign="id_tarjeta_credito"/>
+    </foreign-key>
     <index name="idx_id_pago">
       <index-column name="id_pago"/>
     </index>
+  </table>
+  <table name="detalle_orden">
+    <column name="id_detalle_orden" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="id_orden" type="INTEGER" required="true"/>
+    <column name="id_persona" type="INTEGER" required="true"/>
+    <column name="fecha_hora" type="TIMESTAMP" required="true"/>
+    <column name="numero_orden" type="VARCHAR" size="10" required="true"/>
+    <foreign-key foreignTable="persona" name="Rel_31" onDelete="restrict">
+      <reference local="id_persona" foreign="id_persona"/>
+    </foreign-key>
+    <foreign-key foreignTable="orden" name="Rel_32" onDelete="restrict">
+      <reference local="id_orden" foreign="id_orden"/>
+    </foreign-key>
+  </table>
+  <table name="detalle_pedido">
+    <column name="id_detalle_pedido" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="id_producto" type="INTEGER" required="true"/>
+    <column name="id_detalle_orden" type="INTEGER" required="true"/>
+    <column name="cantidad" type="INTEGER" required="true"/>
+    <foreign-key foreignTable="detalle_orden" name="Rel_33" onDelete="restrict">
+      <reference local="id_detalle_orden" foreign="id_detalle_orden"/>
+    </foreign-key>
+    <foreign-key foreignTable="producto" name="Rel_34" onDelete="restrict">
+      <reference local="id_producto" foreign="id_producto"/>
+    </foreign-key>
   </table>
 </database>
