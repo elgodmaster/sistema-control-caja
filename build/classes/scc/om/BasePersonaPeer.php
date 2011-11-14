@@ -26,13 +26,13 @@ abstract class BasePersonaPeer {
 	const TM_CLASS = 'PersonaTableMap';
 	
 	/** The total number of columns. */
-	const NUM_COLUMNS = 12;
+	const NUM_COLUMNS = 14;
 
 	/** The number of lazy-loaded columns. */
 	const NUM_LAZY_LOAD_COLUMNS = 0;
 
 	/** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-	const NUM_HYDRATE_COLUMNS = 12;
+	const NUM_HYDRATE_COLUMNS = 14;
 
 	/** the column name for the ID_PERSONA field */
 	const ID_PERSONA = 'persona.ID_PERSONA';
@@ -70,6 +70,12 @@ abstract class BasePersonaPeer {
 	/** the column name for the AUTORIZA_PAGO field */
 	const AUTORIZA_PAGO = 'persona.AUTORIZA_PAGO';
 
+	/** the column name for the ADMINISTRADOR field */
+	const ADMINISTRADOR = 'persona.ADMINISTRADOR';
+
+	/** the column name for the CONTROL_CAJAS field */
+	const CONTROL_CAJAS = 'persona.CONTROL_CAJAS';
+
 	/** The default string format for model objects of the related table **/
 	const DEFAULT_STRING_FORMAT = 'YAML';
 	
@@ -89,12 +95,12 @@ abstract class BasePersonaPeer {
 	 * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
 	 */
 	protected static $fieldNames = array (
-		BasePeer::TYPE_PHPNAME => array ('IdPersona', 'IdCargo', 'Nombre', 'Apellido', 'Email', 'Identificacion', 'FechaNacimiento', 'Estado', 'Clave', 'FechaIngreso', 'FechaSalida', 'AutorizaPago', ),
-		BasePeer::TYPE_STUDLYPHPNAME => array ('idPersona', 'idCargo', 'nombre', 'apellido', 'email', 'identificacion', 'fechaNacimiento', 'estado', 'clave', 'fechaIngreso', 'fechaSalida', 'autorizaPago', ),
-		BasePeer::TYPE_COLNAME => array (self::ID_PERSONA, self::ID_CARGO, self::NOMBRE, self::APELLIDO, self::EMAIL, self::IDENTIFICACION, self::FECHA_NACIMIENTO, self::ESTADO, self::CLAVE, self::FECHA_INGRESO, self::FECHA_SALIDA, self::AUTORIZA_PAGO, ),
-		BasePeer::TYPE_RAW_COLNAME => array ('ID_PERSONA', 'ID_CARGO', 'NOMBRE', 'APELLIDO', 'EMAIL', 'IDENTIFICACION', 'FECHA_NACIMIENTO', 'ESTADO', 'CLAVE', 'FECHA_INGRESO', 'FECHA_SALIDA', 'AUTORIZA_PAGO', ),
-		BasePeer::TYPE_FIELDNAME => array ('id_persona', 'id_cargo', 'nombre', 'apellido', 'email', 'identificacion', 'fecha_nacimiento', 'estado', 'clave', 'fecha_ingreso', 'fecha_salida', 'autoriza_pago', ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, )
+		BasePeer::TYPE_PHPNAME => array ('IdPersona', 'IdCargo', 'Nombre', 'Apellido', 'Email', 'Identificacion', 'FechaNacimiento', 'Estado', 'Clave', 'FechaIngreso', 'FechaSalida', 'AutorizaPago', 'Administrador', 'ControlCajas', ),
+		BasePeer::TYPE_STUDLYPHPNAME => array ('idPersona', 'idCargo', 'nombre', 'apellido', 'email', 'identificacion', 'fechaNacimiento', 'estado', 'clave', 'fechaIngreso', 'fechaSalida', 'autorizaPago', 'administrador', 'controlCajas', ),
+		BasePeer::TYPE_COLNAME => array (self::ID_PERSONA, self::ID_CARGO, self::NOMBRE, self::APELLIDO, self::EMAIL, self::IDENTIFICACION, self::FECHA_NACIMIENTO, self::ESTADO, self::CLAVE, self::FECHA_INGRESO, self::FECHA_SALIDA, self::AUTORIZA_PAGO, self::ADMINISTRADOR, self::CONTROL_CAJAS, ),
+		BasePeer::TYPE_RAW_COLNAME => array ('ID_PERSONA', 'ID_CARGO', 'NOMBRE', 'APELLIDO', 'EMAIL', 'IDENTIFICACION', 'FECHA_NACIMIENTO', 'ESTADO', 'CLAVE', 'FECHA_INGRESO', 'FECHA_SALIDA', 'AUTORIZA_PAGO', 'ADMINISTRADOR', 'CONTROL_CAJAS', ),
+		BasePeer::TYPE_FIELDNAME => array ('id_persona', 'id_cargo', 'nombre', 'apellido', 'email', 'identificacion', 'fecha_nacimiento', 'estado', 'clave', 'fecha_ingreso', 'fecha_salida', 'autoriza_pago', 'administrador', 'control_cajas', ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, )
 	);
 
 	/**
@@ -104,12 +110,12 @@ abstract class BasePersonaPeer {
 	 * e.g. self::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
 	 */
 	protected static $fieldKeys = array (
-		BasePeer::TYPE_PHPNAME => array ('IdPersona' => 0, 'IdCargo' => 1, 'Nombre' => 2, 'Apellido' => 3, 'Email' => 4, 'Identificacion' => 5, 'FechaNacimiento' => 6, 'Estado' => 7, 'Clave' => 8, 'FechaIngreso' => 9, 'FechaSalida' => 10, 'AutorizaPago' => 11, ),
-		BasePeer::TYPE_STUDLYPHPNAME => array ('idPersona' => 0, 'idCargo' => 1, 'nombre' => 2, 'apellido' => 3, 'email' => 4, 'identificacion' => 5, 'fechaNacimiento' => 6, 'estado' => 7, 'clave' => 8, 'fechaIngreso' => 9, 'fechaSalida' => 10, 'autorizaPago' => 11, ),
-		BasePeer::TYPE_COLNAME => array (self::ID_PERSONA => 0, self::ID_CARGO => 1, self::NOMBRE => 2, self::APELLIDO => 3, self::EMAIL => 4, self::IDENTIFICACION => 5, self::FECHA_NACIMIENTO => 6, self::ESTADO => 7, self::CLAVE => 8, self::FECHA_INGRESO => 9, self::FECHA_SALIDA => 10, self::AUTORIZA_PAGO => 11, ),
-		BasePeer::TYPE_RAW_COLNAME => array ('ID_PERSONA' => 0, 'ID_CARGO' => 1, 'NOMBRE' => 2, 'APELLIDO' => 3, 'EMAIL' => 4, 'IDENTIFICACION' => 5, 'FECHA_NACIMIENTO' => 6, 'ESTADO' => 7, 'CLAVE' => 8, 'FECHA_INGRESO' => 9, 'FECHA_SALIDA' => 10, 'AUTORIZA_PAGO' => 11, ),
-		BasePeer::TYPE_FIELDNAME => array ('id_persona' => 0, 'id_cargo' => 1, 'nombre' => 2, 'apellido' => 3, 'email' => 4, 'identificacion' => 5, 'fecha_nacimiento' => 6, 'estado' => 7, 'clave' => 8, 'fecha_ingreso' => 9, 'fecha_salida' => 10, 'autoriza_pago' => 11, ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, )
+		BasePeer::TYPE_PHPNAME => array ('IdPersona' => 0, 'IdCargo' => 1, 'Nombre' => 2, 'Apellido' => 3, 'Email' => 4, 'Identificacion' => 5, 'FechaNacimiento' => 6, 'Estado' => 7, 'Clave' => 8, 'FechaIngreso' => 9, 'FechaSalida' => 10, 'AutorizaPago' => 11, 'Administrador' => 12, 'ControlCajas' => 13, ),
+		BasePeer::TYPE_STUDLYPHPNAME => array ('idPersona' => 0, 'idCargo' => 1, 'nombre' => 2, 'apellido' => 3, 'email' => 4, 'identificacion' => 5, 'fechaNacimiento' => 6, 'estado' => 7, 'clave' => 8, 'fechaIngreso' => 9, 'fechaSalida' => 10, 'autorizaPago' => 11, 'administrador' => 12, 'controlCajas' => 13, ),
+		BasePeer::TYPE_COLNAME => array (self::ID_PERSONA => 0, self::ID_CARGO => 1, self::NOMBRE => 2, self::APELLIDO => 3, self::EMAIL => 4, self::IDENTIFICACION => 5, self::FECHA_NACIMIENTO => 6, self::ESTADO => 7, self::CLAVE => 8, self::FECHA_INGRESO => 9, self::FECHA_SALIDA => 10, self::AUTORIZA_PAGO => 11, self::ADMINISTRADOR => 12, self::CONTROL_CAJAS => 13, ),
+		BasePeer::TYPE_RAW_COLNAME => array ('ID_PERSONA' => 0, 'ID_CARGO' => 1, 'NOMBRE' => 2, 'APELLIDO' => 3, 'EMAIL' => 4, 'IDENTIFICACION' => 5, 'FECHA_NACIMIENTO' => 6, 'ESTADO' => 7, 'CLAVE' => 8, 'FECHA_INGRESO' => 9, 'FECHA_SALIDA' => 10, 'AUTORIZA_PAGO' => 11, 'ADMINISTRADOR' => 12, 'CONTROL_CAJAS' => 13, ),
+		BasePeer::TYPE_FIELDNAME => array ('id_persona' => 0, 'id_cargo' => 1, 'nombre' => 2, 'apellido' => 3, 'email' => 4, 'identificacion' => 5, 'fecha_nacimiento' => 6, 'estado' => 7, 'clave' => 8, 'fecha_ingreso' => 9, 'fecha_salida' => 10, 'autoriza_pago' => 11, 'administrador' => 12, 'control_cajas' => 13, ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, )
 	);
 
 	/**
@@ -193,6 +199,8 @@ abstract class BasePersonaPeer {
 			$criteria->addSelectColumn(PersonaPeer::FECHA_INGRESO);
 			$criteria->addSelectColumn(PersonaPeer::FECHA_SALIDA);
 			$criteria->addSelectColumn(PersonaPeer::AUTORIZA_PAGO);
+			$criteria->addSelectColumn(PersonaPeer::ADMINISTRADOR);
+			$criteria->addSelectColumn(PersonaPeer::CONTROL_CAJAS);
 		} else {
 			$criteria->addSelectColumn($alias . '.ID_PERSONA');
 			$criteria->addSelectColumn($alias . '.ID_CARGO');
@@ -206,6 +214,8 @@ abstract class BasePersonaPeer {
 			$criteria->addSelectColumn($alias . '.FECHA_INGRESO');
 			$criteria->addSelectColumn($alias . '.FECHA_SALIDA');
 			$criteria->addSelectColumn($alias . '.AUTORIZA_PAGO');
+			$criteria->addSelectColumn($alias . '.ADMINISTRADOR');
+			$criteria->addSelectColumn($alias . '.CONTROL_CAJAS');
 		}
 	}
 

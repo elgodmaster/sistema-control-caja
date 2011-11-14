@@ -11,7 +11,7 @@ try {
         Log::registraLog($persona->getIdpersona(),'Login','Ingreso al sistema '.$persona->getIdpersona().': '.$persona->getNombre().' '.$persona->getApellido(),'L',$con);
         $_SESSION['persona_sesion'] = $persona;
         $_SESSION['persona_sesion_id'] = $persona->getIdpersona();
-        header('location: mapp.php');
+        header('location: seleccion_acceso.php');
     }
     else {
         $_SESSION['error'] = 'DI';

@@ -3,9 +3,9 @@
     require_once 'includes/ac.php';
     header("Content-type: text/xml");
     echo("<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n");
-    $fp = fopen('rafa.txt','w');
-    fwrite($fp,serialize($_REQUEST));
-    fclose($fp);
+    //$fp = fopen('rafa.txt','w');
+    //fwrite($fp,serialize($_REQUEST));
+    //fclose($fp);
     switch($_REQUEST['a']) {        
         //Listas para GRID
         case "grid":
@@ -100,6 +100,9 @@
                 case "10":
                     $gxml = Persona::seleccionarPersona($_REQUEST['id']);
                     break;
+                case "11":
+                    $gxml = Cliente::seleccionarCliente($_REQUEST['id']);
+                    break;
                 case "16":
                     $gxml = TarjetaCredito::seleccionarTarjetaCredito($_REQUEST['id']);
                     break;
@@ -133,6 +136,9 @@
                 case "10":
                     $gxml = Persona::actualizarPersona($persona_sesion->getIdPersona());
                     break;
+                case "11":
+                    $gxml = Cliente::actualizarCliente($persona_sesion->getIdPersona());
+                    break;
                 case "16":
                     $gxml = TarjetaCredito::actualizarTarjetaCredito($persona_sesion->getIdPersona());
                     break;
@@ -165,6 +171,9 @@
                     break;
                 case "10":
                     $gxml = Persona::eliminarPersona($persona_sesion->getIdPersona());
+                    break;
+                case "11":
+                    $gxml = Cliente::eliminarCliente($persona_sesion->getIdPersona());
                     break;
                 case "16":
                     $gxml = TarjetaCredito::eliminarTarjetaCredito($persona_sesion->getIdPersona());
@@ -219,6 +228,22 @@
                             $gxml = $persona_sesion->actualizaArbolCajas($_REQUEST[$_REQUEST['ids'].'_campo'],$_REQUEST['id']);
                             break;
                     }
+                    break;
+            }
+            break;
+        
+        //Dataviews
+        case "dataview":
+            switch($_REQUEST['b']) {
+                case "accesos":
+                    $gxml = Persona::generaAccesosPersona($persona_sesion->getIdPersona());
+                    break;
+                case "caja":
+                    $gxml = Caja::generaOpcionesCaja($_REQUEST['c'],$_REQUEST['d'],$persona_sesion->getIdPersona());
+                    break;
+                case "evalua":
+                    $gxml = Caja::evaluaAccionesTomar($_REQUEST['c'],$_REQUEST['d']);
+                    //$gxml = '<data><item>status_bar.setText(barra_estado + "parece");dhtmlx.alert({title:"Mensaje", text:"Caja Abierta Exitosamente!"});</item></data>';
                     break;
             }
             break;

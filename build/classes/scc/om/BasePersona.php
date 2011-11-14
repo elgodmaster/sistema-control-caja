@@ -97,6 +97,18 @@ abstract class BasePersona extends BaseObject  implements Persistent
 	protected $autoriza_pago;
 
 	/**
+	 * The value for the administrador field.
+	 * @var        string
+	 */
+	protected $administrador;
+
+	/**
+	 * The value for the control_cajas field.
+	 * @var        string
+	 */
+	protected $control_cajas;
+
+	/**
 	 * @var        Cargo
 	 */
 	protected $aCargo;
@@ -365,6 +377,26 @@ abstract class BasePersona extends BaseObject  implements Persistent
 	}
 
 	/**
+	 * Get the [administrador] column value.
+	 * S =\g Si   N=\g No
+	 * @return     string
+	 */
+	public function getAdministrador()
+	{
+		return $this->administrador;
+	}
+
+	/**
+	 * Get the [control_cajas] column value.
+	 * S =\g Si   N=\g No
+	 * @return     string
+	 */
+	public function getControlCajas()
+	{
+		return $this->control_cajas;
+	}
+
+	/**
 	 * Set the value of [id_persona] column.
 	 * 
 	 * @param      int $v new value
@@ -615,6 +647,46 @@ abstract class BasePersona extends BaseObject  implements Persistent
 	} // setAutorizaPago()
 
 	/**
+	 * Set the value of [administrador] column.
+	 * S =\g Si   N=\g No
+	 * @param      string $v new value
+	 * @return     Persona The current object (for fluent API support)
+	 */
+	public function setAdministrador($v)
+	{
+		if ($v !== null) {
+			$v = (string) $v;
+		}
+
+		if ($this->administrador !== $v) {
+			$this->administrador = $v;
+			$this->modifiedColumns[] = PersonaPeer::ADMINISTRADOR;
+		}
+
+		return $this;
+	} // setAdministrador()
+
+	/**
+	 * Set the value of [control_cajas] column.
+	 * S =\g Si   N=\g No
+	 * @param      string $v new value
+	 * @return     Persona The current object (for fluent API support)
+	 */
+	public function setControlCajas($v)
+	{
+		if ($v !== null) {
+			$v = (string) $v;
+		}
+
+		if ($this->control_cajas !== $v) {
+			$this->control_cajas = $v;
+			$this->modifiedColumns[] = PersonaPeer::CONTROL_CAJAS;
+		}
+
+		return $this;
+	} // setControlCajas()
+
+	/**
 	 * Indicates whether the columns in this object are only set to default values.
 	 *
 	 * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -658,6 +730,8 @@ abstract class BasePersona extends BaseObject  implements Persistent
 			$this->fecha_ingreso = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
 			$this->fecha_salida = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
 			$this->autoriza_pago = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
+			$this->administrador = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
+			$this->control_cajas = ($row[$startcol + 13] !== null) ? (string) $row[$startcol + 13] : null;
 			$this->resetModified();
 
 			$this->setNew(false);
@@ -666,7 +740,7 @@ abstract class BasePersona extends BaseObject  implements Persistent
 				$this->ensureConsistency();
 			}
 
-			return $startcol + 12; // 12 = PersonaPeer::NUM_HYDRATE_COLUMNS.
+			return $startcol + 14; // 14 = PersonaPeer::NUM_HYDRATE_COLUMNS.
 
 		} catch (Exception $e) {
 			throw new PropelException("Error populating Persona object", $e);
@@ -1191,6 +1265,12 @@ abstract class BasePersona extends BaseObject  implements Persistent
 			case 11:
 				return $this->getAutorizaPago();
 				break;
+			case 12:
+				return $this->getAdministrador();
+				break;
+			case 13:
+				return $this->getControlCajas();
+				break;
 			default:
 				return null;
 				break;
@@ -1232,6 +1312,8 @@ abstract class BasePersona extends BaseObject  implements Persistent
 			$keys[9] => $this->getFechaIngreso(),
 			$keys[10] => $this->getFechaSalida(),
 			$keys[11] => $this->getAutorizaPago(),
+			$keys[12] => $this->getAdministrador(),
+			$keys[13] => $this->getControlCajas(),
 		);
 		if ($includeForeignObjects) {
 			if (null !== $this->aCargo) {
@@ -1331,6 +1413,12 @@ abstract class BasePersona extends BaseObject  implements Persistent
 			case 11:
 				$this->setAutorizaPago($value);
 				break;
+			case 12:
+				$this->setAdministrador($value);
+				break;
+			case 13:
+				$this->setControlCajas($value);
+				break;
 		} // switch()
 	}
 
@@ -1367,6 +1455,8 @@ abstract class BasePersona extends BaseObject  implements Persistent
 		if (array_key_exists($keys[9], $arr)) $this->setFechaIngreso($arr[$keys[9]]);
 		if (array_key_exists($keys[10], $arr)) $this->setFechaSalida($arr[$keys[10]]);
 		if (array_key_exists($keys[11], $arr)) $this->setAutorizaPago($arr[$keys[11]]);
+		if (array_key_exists($keys[12], $arr)) $this->setAdministrador($arr[$keys[12]]);
+		if (array_key_exists($keys[13], $arr)) $this->setControlCajas($arr[$keys[13]]);
 	}
 
 	/**
@@ -1390,6 +1480,8 @@ abstract class BasePersona extends BaseObject  implements Persistent
 		if ($this->isColumnModified(PersonaPeer::FECHA_INGRESO)) $criteria->add(PersonaPeer::FECHA_INGRESO, $this->fecha_ingreso);
 		if ($this->isColumnModified(PersonaPeer::FECHA_SALIDA)) $criteria->add(PersonaPeer::FECHA_SALIDA, $this->fecha_salida);
 		if ($this->isColumnModified(PersonaPeer::AUTORIZA_PAGO)) $criteria->add(PersonaPeer::AUTORIZA_PAGO, $this->autoriza_pago);
+		if ($this->isColumnModified(PersonaPeer::ADMINISTRADOR)) $criteria->add(PersonaPeer::ADMINISTRADOR, $this->administrador);
+		if ($this->isColumnModified(PersonaPeer::CONTROL_CAJAS)) $criteria->add(PersonaPeer::CONTROL_CAJAS, $this->control_cajas);
 
 		return $criteria;
 	}
@@ -1463,6 +1555,8 @@ abstract class BasePersona extends BaseObject  implements Persistent
 		$copyObj->setFechaIngreso($this->getFechaIngreso());
 		$copyObj->setFechaSalida($this->getFechaSalida());
 		$copyObj->setAutorizaPago($this->getAutorizaPago());
+		$copyObj->setAdministrador($this->getAdministrador());
+		$copyObj->setControlCajas($this->getControlCajas());
 
 		if ($deepCopy) {
 			// important: temporarily setNew(false) because this affects the behavior of
@@ -2870,6 +2964,8 @@ abstract class BasePersona extends BaseObject  implements Persistent
 		$this->fecha_ingreso = null;
 		$this->fecha_salida = null;
 		$this->autoriza_pago = null;
+		$this->administrador = null;
+		$this->control_cajas = null;
 		$this->alreadyInSave = false;
 		$this->alreadyInValidation = false;
 		$this->clearAllReferences();

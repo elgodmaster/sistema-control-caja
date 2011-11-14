@@ -43,8 +43,6 @@
 	function actualizacion_handler() {
 	    alert('Registro actualizado..!!');
 	    <?=$clear_forma_edicion?>
-	    //forma_edicion.unload();
-	    //forma_edicion.setItemValue("nombre","");
 	    layout_principal.progressOff();
 	    grid.clearAndLoad("midware.php?a=grid&b=<?=$int_cod?>"); //Valor Dinámico
 	}

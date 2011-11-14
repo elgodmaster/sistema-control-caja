@@ -49,6 +49,8 @@ class PersonaTableMap extends TableMap {
 		$this->addColumn('FECHA_INGRESO', 'FechaIngreso', 'DATE', true, null, null);
 		$this->addColumn('FECHA_SALIDA', 'FechaSalida', 'DATE', false, null, null);
 		$this->addColumn('AUTORIZA_PAGO', 'AutorizaPago', 'VARCHAR', true, 1, null);
+		$this->addColumn('ADMINISTRADOR', 'Administrador', 'VARCHAR', true, 1, null);
+		$this->addColumn('CONTROL_CAJAS', 'ControlCajas', 'VARCHAR', true, 1, null);
 		// validators
 	} // initialize()
 

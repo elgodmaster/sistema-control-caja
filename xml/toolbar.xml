@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <toolbar>
-    <item id="salir" type="button" text="Salir" img="exit.gif"/>
+    <item id="regresar" type="button" text="Regresar" img="regresar.png"/>
+    <item id="salir" type="button" text="Salir" img="salir.png"/>
 </toolbar>

@@ -106,7 +106,7 @@ abstract class BaseLocalizacion extends BaseObject  implements Persistent
 
 	/**
 	 * Get the [output_device] column value.
-	 * I =\g Impresora / P =\g Pantalla
+	 * I =\g Impresora / M =\g Pantalla (Mensajes)  / C =\g Pantalla (Caja)
 	 * @return     string
 	 */
 	public function getOutputDevice()
@@ -186,7 +186,7 @@ abstract class BaseLocalizacion extends BaseObject  implements Persistent
 
 	/**
 	 * Set the value of [output_device] column.
-	 * I =\g Impresora / P =\g Pantalla
+	 * I =\g Impresora / M =\g Pantalla (Mensajes)  / C =\g Pantalla (Caja)
 	 * @param      string $v new value
 	 * @return     Localizacion The current object (for fluent API support)
 	 */

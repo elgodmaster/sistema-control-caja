@@ -4,6 +4,6 @@
     <item id="elimina" type="button" text="Elimina Registro" img="eliminar.gif"/>
     <item id="sep01" type="separator"/>
     <item id="opciones_menu" type="button" text="Accesos Menú" img="list.gif"/>
-    <item id="localizaciones" type="button" text="Localizaciones" img="locali.gif"/>
+    <item id="localizaciones" type="button" text="Terminales" img="locali.gif"/>
     <item id="cajas" type="button" text="Cajas" img="caja.gif"/>
 </toolbar>

@@ -19,7 +19,7 @@ class Persona extends BasePersona {
     
     public function generaArbolLocalizaciones($id_persona) {
         $this->arbol_xml = "";
-        $this->arbol_xml .= '<tree id="0"><item text="Localizaciones" tooltip = "" select="1" open="1" id="main">';
+        $this->arbol_xml .= '<tree id="0"><item text="Terminales" tooltip = "" select="1" open="1" id="main">';
         $localizaciones = LocalizacionQuery::create()
                         ->where('Localizacion.Estado = ?','A')
                         ->where('Localizacion.OutputDevice IN ?',array('M','C'))
@@ -274,6 +274,14 @@ ram;
             $persona->setClave(md5($_REQUEST[$_REQUEST['ids'].'_fecha_salida']));
             $persona->setEstado($_REQUEST[$_REQUEST['ids'].'_estado']);
             $persona->setAutorizaPago($_REQUEST[$_REQUEST['ids'].'_autoriza_pago']);
+            if($_REQUEST[$_REQUEST['ids'].'_administrador'] == "1")
+                $persona->setAdministrador('1');
+            else
+                $persona->setAdministrador('0');
+            if($_REQUEST[$_REQUEST['ids'].'_control_cajas'] == "1")
+                $persona->setControlCajas('1');
+            else
+                $persona->setControlCajas('0');
             $con->beginTransaction();
             $persona->save($con);
             Log::registraLog($idPersona,'Persona','Persona # '.$persona->getIdPersona().': '.$persona->getNombre().' '.$persona->getApellido(),'I',$con);
@@ -290,6 +298,7 @@ ram;
     
     static public function seleccionarPersona($idPersona) {
         try {
+            $persona = new Persona();
             $persona = PersonaQuery::create()
                             ->findPk($idPersona);
             $gxml = '<data>';
@@ -306,6 +315,8 @@ ram;
             $gxml .= '<clave></clave>';
             $gxml .= '<estado>'.$persona->getEstado().'</estado>';
             $gxml .= '<autoriza_pago>'.$persona->getAutorizaPago().'</autoriza_pago>';
+            $gxml .= '<administrador>'.$persona->getAdministrador().'</administrador>';
+            $gxml .= '<control_cajas>'.$persona->getControlCajas().'</control_cajas>';
             $gxml .= '</data>';
         }
         catch(Exception $e) {
@@ -333,6 +344,14 @@ ram;
                 $persona->setAutorizaPago($_REQUEST[$_REQUEST['ids'].'_autoriza_pago']);
                 if(trim($_REQUEST[$_REQUEST['ids'].'_clave']) != "")
                     $persona->setClave(md5($_REQUEST[$_REQUEST['ids'].'_clave']));
+                if($_REQUEST[$_REQUEST['ids'].'_administrador'] == "1")
+                    $persona->setAdministrador('1');
+                else
+                    $persona->setAdministrador('0');
+                if($_REQUEST[$_REQUEST['ids'].'_control_cajas'] == "1")
+                    $persona->setControlCajas('1');
+                else
+                    $persona->setControlCajas('0');
                 $con->beginTransaction();
                 $persona->save($con);
                 Log::registraLog($idPersona,'Persona','Persona # '.$persona->getIdPersona().': '.$persona->getIdPersona(),'M',$con);
@@ -372,6 +391,59 @@ ram;
         }
         else
             $gxml = '<data><action type="no_eli">No es posible eliminar al id de usuario administrador</action></data>';
+        return $gxml;
+    }
+    
+    static public function generaAccesosPersona($idPersona) {
+        $tilde_o = mb_convert_encoding("ó","UTF-8","ISO-8859-1");
+        $gxml = '<data>';
+        $persona = PersonaQuery::create()
+                ->findPK($idPersona);
+        if($persona->getControlCajas() == "1") {
+            if($idPersona == "0") {
+                $cajas = CajaQuery::create()
+                        ->where('Caja.Estado = ?','A')
+                        ->find();
+                foreach($cajas as $caja) {
+                    $gxml .= '<item id="caja_'.$caja->getIdCaja().'">';
+                    $gxml .= '<IMG>images/cajas.png</IMG>';
+                    $gxml .= '<TITULO>'.$caja->getDescripcion().'</TITULO>';
+                    $gxml .= '</item>';
+                }
+            }
+            else {
+                $cajas = CajaQuery::create()
+                        ->join('Caja.UsuarioCaja')
+                        ->where('Caja.Estado = ?','A')
+                        ->where('UsuarioCaja.IdPersona = ?',$idPersona)
+                        ->find();
+                foreach($cajas as $caja) {
+                    $gxml .= '<item id="caja_'.$caja->getIdCaja().'">';
+                    $gxml .= '<IMG>images/cajas.png</IMG>';
+                    $gxml .= '<TITULO>'.$caja->getDescripcion().'</TITULO>';
+                    $gxml .= '</item>';
+                }
+            }
+        }
+        if($idPersona == "0") {
+            $terminales = LocalizacionQuery::create()
+                        ->where('Localizacion.Estado = ?','A')
+                        ->where('Localizacion.OutputDevice = ?','M')
+                        ->find();
+            foreach($terminales as $terminal) {
+                $gxml .= '<item id="terminal_'.$terminal->getIdLocalizacion().'">';
+                $gxml .= '<IMG>images/pantalla.png</IMG>';
+                $gxml .= '<TITULO>'.$terminal->getNombre().'</TITULO>';
+                $gxml .= '</item>';
+            }
+        }
+        if($persona->getAdministrador() == "1") {
+            $gxml .= '<item id="administrador">';
+            $gxml .= '<IMG>images/administrador.png</IMG>';
+            $gxml .= '<TITULO>Configuraci'.$tilde_o.'n</TITULO>';
+            $gxml .= '</item>';
+        }
+        $gxml .= '</data>';
         return $gxml;
     }
 

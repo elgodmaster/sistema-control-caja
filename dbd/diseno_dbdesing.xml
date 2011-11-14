@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes" ?>
 <DBMODEL Version="4.0">
 <SETTINGS>
-<GLOBALSETTINGS ModelName="taberna_colonial" IDModel="0" IDVersion="0" VersionStr="1.0.0.0" Comments="" UseVersionHistroy="1" AutoIncVersion="1" DatabaseType="MySQL" ZoomFac="75.00" XPos="0" YPos="284" DefaultDataType="5" DefaultTablePrefix="0" DefSaveDBConn="" DefSyncDBConn="" DefQueryDBConn="" Printer="Samsung ML-1740 Series" HPageCount="1.0" PageAspectRatio="1.431813406177768" PageOrientation="1" PageFormat="A4 (210x297 mm, 8.26x11.7 inches)" SelectedPages="" UsePositionGrid="0" PositionGridX="20" PositionGridY="20" TableNameInRefs="0" DefaultTableType="1" ActivateRefDefForNewRelations="1" FKPrefix="" FKPostfix="" CreateFKRefDefIndex="0" DBQuoteCharacter="`" CreateSQLforLinkedObjects="0" DefModelFont="Tahoma" CanvasWidth="4096" CanvasHeight="2842" />
+<GLOBALSETTINGS ModelName="taberna_colonial" IDModel="0" IDVersion="0" VersionStr="1.0.0.0" Comments="" UseVersionHistroy="1" AutoIncVersion="1" DatabaseType="MySQL" ZoomFac="75.00" XPos="0" YPos="122" DefaultDataType="5" DefaultTablePrefix="0" DefSaveDBConn="" DefSyncDBConn="" DefQueryDBConn="" Printer="Samsung ML-1740 Series" HPageCount="1.0" PageAspectRatio="1.431813406177768" PageOrientation="1" PageFormat="A4 (210x297 mm, 8.26x11.7 inches)" SelectedPages="" UsePositionGrid="0" PositionGridX="20" PositionGridY="20" TableNameInRefs="0" DefaultTableType="1" ActivateRefDefForNewRelations="1" FKPrefix="" FKPostfix="" CreateFKRefDefIndex="0" DBQuoteCharacter="`" CreateSQLforLinkedObjects="0" DefModelFont="Tahoma" CanvasWidth="4096" CanvasHeight="2842" />
 <DATATYPEGROUPS>
 <DATATYPEGROUP Name="Numeric Types" Icon="1" />
 <DATATYPEGROUP Name="Date and Time Types" Icon="2" />
@@ -780,7 +780,7 @@
 </INDEX>
 </INDICES>
 </TABLE>
-<TABLE ID="1303" Tablename="menu" PrevTableName="" XPos="658" YPos="210" TableType="1" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="INSERT INTO `menu` (`id_menu`, `descripcion`, `id_menu_padre`, `link`, `nivel`, `orden`, `estado`) VALUES\n(1, \aConfiguraci\243n\a, 0, \aNA\a, 1, 1, \aA\a),\n(2, \aMantenimiento\a, 0, \aNA\a, 1, 2, \aA\a),\n(3, \aManejo de Caja\a, 0, \aNA\a, 1, 3, \aA\a),\n(4, \aCajas\a, 1, \acajas.php\a, 2, 1, \aA\a),\n(5, \aCargos\a, 1, \acargos.php\a, 2, 2, \aA\a),\n(6, \aLocalizaciones\a, 1, \alocalizaciones.php\a, 2, 3, \aA\a),\n(7, \aMesas\a, 2, \amesas.php\a, 2, 1, \aA\a),\n(8, \aProductos\a, 2, \aproductos.php\a, 2, 2, \aA\a),\n(9, \aSeguridad\a, 0, \aNA\a, 1, 4, \aA\a),\n(10, \aUsuarios\a, 9, \ausuarios.php\a, 2, 1, \aA\a),\n(11, \aClientes\a, 3, \aclientes.php\a, 2, 1, \aA\a),\n(12, \aCuadre de Caja\a, 3, \acuadre.php\a, 2, 2, \aA\a),\n(13, \aOrdenes\a, 3, \aordenes.php\a, 2, 3, \aA\a),\n(14, \aGrupos\a, 3, \agrupos.php\a, 2, 4, \aA\a),\n(15, \aIngresos-Egresos\a, 3, \aingresos_egresos.php\a, 2, 5, \aA\a),\n(16, \aTarjetas de Cr\233dito\a, 2, \atarjetas_credito.php\a, 2, 2, \aA\a),\n(17, \aBancos\a, 2, \abancos.php\a, 2, 3, \aA\a),\n(18, \aFormas de Pago\a, 2, \aformas_pago.php\a, 2, 4, \aA\a);\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="11" >
+<TABLE ID="1303" Tablename="menu" PrevTableName="" XPos="658" YPos="210" TableType="1" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="INSERT INTO `menu` (`id_menu`, `descripcion`, `id_menu_padre`, `link`, `nivel`, `orden`, `estado`) VALUES\n(1, \aConfiguraci\243n\a, 0, \aNA\a, 1, 1, \aA\a),\n(2, \aMantenimiento\a, 0, \aNA\a, 1, 2, \aA\a),\n(3, \aManejo de Caja\a, 0, \aNA\a, 1, 4, \aA\a),\n(4, \aCajas\a, 1, \acajas.php\a, 2, 1, \aA\a),\n(5, \aCargos\a, 1, \acargos.php\a, 2, 2, \aA\a),\n(6, \aTerminales\a, 1, \alocalizaciones.php\a, 2, 3, \aA\a),\n(7, \aMesas\a, 2, \amesas.php\a, 2, 1, \aA\a),\n(8, \aProductos\a, 2, \aproductos.php\a, 2, 2, \aA\a),\n(9, \aSeguridad\a, 0, \aNA\a, 1, 3, \aA\a),\n(10, \aUsuarios\a, 9, \ausuarios.php\a, 2, 1, \aA\a),\n(11, \aClientes\a, 2, \aclientes.php\a, 2, 5, \aA\a),\n(12, \aCuadre de Caja\a, 3, \acuadre.php\a, 2, 2, \aA\a),\n(13, \aOrdenes\a, 3, \aordenes.php\a, 2, 3, \aA\a),\n(14, \aGrupos\a, 3, \agrupos.php\a, 2, 4, \aA\a),\n(15, \aIngresos-Egresos\a, 3, \aingresos_egresos.php\a, 2, 5, \aA\a),\n(16, \aTarjetas de Cr\233dito\a, 2, \atarjetas_credito.php\a, 2, 2, \aA\a),\n(17, \aBancos\a, 2, \abancos.php\a, 2, 3, \aA\a),\n(18, \aFormas de Pago\a, 2, \aformas_pago.php\a, 2, 4, \aA\a);\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="11" >
 <COLUMNS>
 <COLUMN ID="1393" ColName="id_menu" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="10" Prec="0" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
 <OPTIONSELECTED>
@@ -916,7 +916,7 @@
 </INDEX>
 </INDICES>
 </TABLE>
-<TABLE ID="1306" Tablename="persona" PrevTableName="" XPos="354" YPos="276" TableType="1" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="INSERT INTO persona(id_persona, id_cargo, nombre, apellido, email, identificacion, \nfecha_nacimiento, estado, clave, fecha_ingreso, fecha_salida,autoriza_pago)\nVALUES (\a0\a, \a0\a, \aAdministrador\a, \aLTC\a, \aadministrador@ltc.com\a, \ana\a, \a2000-01-01\a,\n\aA\a, \a5f4dcc3b5aa765d61d8327deb882cf99\a, \a2001-01-01\a, NULL,\aS\a);\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="14" >
+<TABLE ID="1306" Tablename="persona" PrevTableName="" XPos="354" YPos="276" TableType="1" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="INSERT INTO persona(id_persona, id_cargo, nombre, apellido, email, identificacion, \nfecha_nacimiento, estado, clave, fecha_ingreso, fecha_salida,autoriza_pago)\nVALUES (\a0\a, \a0\a, \aAdministrador\a, \aLTC\a, \aadministrador@ltc.com\a, \ana\a, \a2000-01-01\a,\n\aA\a, \a5f4dcc3b5aa765d61d8327deb882cf99\a, \a2001-01-01\a, \a3000-01-01\a,\aS\a,\aS\a,\aS\a);\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="14" >
 <COLUMNS>
 <COLUMN ID="1413" ColName="id_persona" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="10" Prec="0" PrimaryKey="1" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments="">
 <OPTIONSELECTED>
@@ -973,6 +973,16 @@
 </OPTIONSELECTED>
 </COLUMN>
 <COLUMN ID="1635" ColName="autoriza_pago" PrevColName="" Pos="11" idDatatype="20" DatatypeParams="(1)" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+<OPTIONSELECTED>
+<OPTIONSELECT Value="0" />
+</OPTIONSELECTED>
+</COLUMN>
+<COLUMN ID="1783" ColName="administrador" PrevColName="" Pos="12" idDatatype="20" DatatypeParams="(1)" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="S =\g Si   N=\g No">
+<OPTIONSELECTED>
+<OPTIONSELECT Value="0" />
+</OPTIONSELECTED>
+</COLUMN>
+<COLUMN ID="1784" ColName="control_cajas" PrevColName="" Pos="13" idDatatype="20" DatatypeParams="(1)" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="S =\g Si   N=\g No">
 <OPTIONSELECTED>
 <OPTIONSELECT Value="0" />
 </OPTIONSELECTED>
@@ -1144,7 +1154,7 @@
 <OPTIONSELECT Value="0" />
 </OPTIONSELECTED>
 </COLUMN>
-<COLUMN ID="1557" ColName="output_device" PrevColName="" Pos="2" idDatatype="20" DatatypeParams="(1)" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="I =\g Impresora / P =\g Pantalla">
+<COLUMN ID="1557" ColName="output_device" PrevColName="" Pos="2" idDatatype="20" DatatypeParams="(1)" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="I =\g Impresora / M =\g Pantalla (Mensajes)  / C =\g Pantalla (Caja)">
 <OPTIONSELECTED>
 <OPTIONSELECT Value="0" />
 </OPTIONSELECTED>

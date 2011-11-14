@@ -16,11 +16,10 @@
 class Localizacion extends BaseLocalizacion {
     
     static public function listaLocalizaciones() {
-        $tilde_o = mb_convert_encoding("ón","UTF-8","ISO-8859-1");
         $gxml = <<<ram
 <rows>
 <head>
-<column width="90" type="ro" align="center" color="white" sort="na">Id Localizaci$tilde_o</column>
+<column width="90" type="ro" align="center" color="white" sort="na">Id Terminal</column>
 <column width="150" type="ro" align="left" color="white" sort="na">Nombre</column>
 <column width="135" type="ro" align="center" color="white" sort="na">Tipo Dispositivo</column>
 <column width="55" type="ro" align="center" color="white" sort="na">Visible</column>
