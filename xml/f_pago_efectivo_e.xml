@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<items>
+<item type="fieldset" label="Datos Pago">
+<item type="settings" position="label-left" labelWidth="120"/>
+<item type="input" validate="NotEmpty" name="fecha_hora" bind="fecha_hora" label="Fecha-Hora" width="180" readonly="true"/>
+<item type="input" validate="NotEmpty" name="autoriza" bind="autoriza" label="Autorizado por" width="180" readonly="true"/>
+<item type="input" validate="NotEmpty" name="receptor" bind="receptor" label="Beneficiario" width="180" readonly="true"/>
+<item type="input" validate="NotEmpty" name="concepto" bind="concepto" label="Concepto" rows="4" readonly="true"/>
+<item type="input" validate="NotEmpty" name="valor" bind="valor" label="Valor" width="100" readonly="true"/>
+<item type="input" validate="NotEmpty" name="estado" bind="estado" label="Estado" readonly="true"/>
+</item>
+</items>

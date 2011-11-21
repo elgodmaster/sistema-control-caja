@@ -9,6 +9,7 @@
     $id_cuadre_caja = Caja::obtenerCuadreCajaActiva($id_caja);
     if($id_cuadre_caja > 0) {
 	$_SESSION['caja_'.$id_caja] = $id_cuadre_caja;
+	$_SESSION['id_caja'] = $id_caja;
 	$mensaje_status_caja = "Cuadre de Caja Activo: ".$id_cuadre_caja;
     }
     else

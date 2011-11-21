@@ -65,5 +65,38 @@ class CuadreCaja extends BaseCuadreCaja {
         }
         return $resultado;
     }
+    
+    static public function obtenerEfectivoFinalCaja($id_caja) {
+        $id_cuadre_caja = $_SESSION['caja_'.$id_caja];
+        $cuadre_caja = CuadreCajaQuery::create()
+                ->where('CuadreCaja.IdCuadreCaja = ?',$id_cuadre_caja)
+                ->findOne();
+        $gxml = '<data>';
+        $gxml .= '<efectivo_final>'.$cuadre_caja->getEfectivoFinal().'</efectivo_final>';
+        $gxml .= '</data>';
+        return $gxml;
+    }
+    
+    static public function actualizaEfectivoFinalCaja($id_caja,$idPersona) {
+        $id_cuadre_caja = $_SESSION['caja_'.$id_caja];
+        $valor = $_REQUEST[$_REQUEST['ids'].'_efectivo_final'];
+        try {
+            $con = Propel::getConnection(CuadreCajaPeer::DATABASE_NAME);
+            $cuadre_caja = CuadreCajaQuery::create()
+                        ->where('CuadreCaja.IdCuadreCaja = ?',$id_cuadre_caja)
+                        ->findOne();
+            $cuadre_caja->setEfectivoFinal($valor);
+            $cuadre_caja->save($con);
+            Log::registraLog($idPersona,'Cuadre Caja','Efectivo Final Registrado Cuadre Caja # '.$id_cuadre_caja.': '.$valor,'U',$con);
+            $con->commit();
+            $gxml = '<data><action type="update" sid="'.$id_cuadre_caja.'" tid="'.$id_cuadre_caja.'"></action><action type="act_ok"></action></data>';
+        }
+        catch(Exception $e) {
+            $con->rollBack();
+            Log::logError($e);
+            $gxml = '<data><action type="no_act">No fue posible registrar Efectivo Final</action></data>';
+        }
+        return $gxml;
+    }
 
 } // CuadreCaja

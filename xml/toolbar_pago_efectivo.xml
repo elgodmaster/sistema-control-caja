@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<toolbar>
+    <item id="nuevo" type="button" text="Nuevo Pago" img="nuevo.gif"/>
+    <item id="anular" type="button" text="Anula Pago" img="eliminar.gif"/>
+</toolbar>
