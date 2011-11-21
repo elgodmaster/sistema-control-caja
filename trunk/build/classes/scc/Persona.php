@@ -446,5 +446,18 @@ ram;
         $gxml .= '</data>';
         return $gxml;
     }
+    
+    static public function listaAutorizadorPagoCombo() {
+        $gxml = '<complete>';
+        $personas = PersonaQuery::create()
+                    ->where('Persona.AutorizaPago = ?','S')
+                    ->where('Persona.Estado = ?','A')
+                    ->find();
+        foreach($personas as $persona) {
+            $gxml .= '<option value="'.$persona->getIdPersona().'">'.$persona->getApellido()." ".$persona->getNombre().'</option>';
+        }
+        $gxml .= '</complete>';
+        return $gxml;
+    }
 
 } // Persona

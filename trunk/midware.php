@@ -40,6 +40,9 @@
                 case "18":
                     $gxml = FormaPago::listaFormaPago();
                     break;
+                case "pago_efectivo":
+                    $gxml = PagoEfectivo::listaPagosEfectivo($_REQUEST['c']);
+                    break;
             }
             break;
         
@@ -75,6 +78,9 @@
                     break;
                 case "18":
                     $gxml = FormaPago::guardaFormaPago($persona_sesion->getIdPersona());
+                    break;
+                case "pago_efectivo":
+                    $gxml = PagoEfectivo::guardaPagoEfectivo($persona_sesion->getIdPersona(),$_REQUEST['c']);
                     break;
             }
             break;
@@ -112,6 +118,12 @@
                 case "18":
                     $gxml = FormaPago::seleccionarFormaPago($_REQUEST['id']);
                     break;
+                case "efectivo_final":
+                    $gxml = CuadreCaja::obtenerEfectivoFinalCaja($_REQUEST['c']);
+                    break;
+                case "pago_efectivo":
+                    $gxml = PagoEfectivo::seleccionarPagoEfectivo($_REQUEST['id']);
+                    break;
             }
             break;
         
@@ -147,6 +159,9 @@
                     break;
                 case "18":
                     $gxml = FormaPago::actualizarFormaPago($persona_sesion->getIdPersona());
+                    break;
+                case "efectivo_final":
+                    $gxml = CuadreCaja::actualizaEfectivoFinalCaja($_REQUEST['c'],$persona_sesion->getIdPersona());
                     break;
             }
             break;
@@ -184,6 +199,9 @@
                 case "18":
                     $gxml = FormaPago::eliminarFormaPago($persona_sesion->getIdPersona());
                     break;
+                case "pago_efectivo":
+                    $gxml = PagoEfectivo::anularPersona($persona_sesion->getIdPersona());
+                    break;
             }
             break;
         
@@ -192,6 +210,9 @@
             switch($_REQUEST['b']) {
                 case "cargo":
                     $gxml = Cargo::listaCargosCombo();
+                    break;
+                case "autoriza_pago":
+                    $gxml = Persona::listaAutorizadorPagoCombo();
                     break;
             }
             break;

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<items>
+<item type="fieldset" label="Datos Pago">
+<item type="settings" position="label-left" labelWidth="120"/>
+<item type="combo" name="autoriza" bind="autoriza" label="Autorizado por" width="180"/>
+<item type="input" validate="NotEmpty" name="receptor" bind="receptor" label="Beneficiario" width="180"/>
+<item type="input" validate="NotEmpty" name="concepto" bind="concepto" label="Concepto" width="180" rows="4"/>
+<item type="input" validate="NotEmpty" name="valor" bind="valor" label="Valor" width="100"/>
+</item>
+<item type="button" command="guardar" value="Guardar"/>
+</items>

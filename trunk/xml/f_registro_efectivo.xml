@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <items>
 <item type="fieldset" label="Registro Efectivo Final en Caja">
-<item type="settings" position="label-left" labelWidth="120"/>
-<item type="input" validate="ValidNumeric" name="efectivo_final" bind="efectivo_final" style="width:430px; height:30px;font-size:24px;text-align:center;" label="Valor Efectivo" width="180"/>
+<item type="settings" position="label-left" labelWidth="180"/>
+<item type="label" label="Valor Efectivo" className="style1"/>
+<item type="input" validate="ValidNumeric" name="efectivo_final" bind="efectivo_final" style="width:330px; height:30px;font-size:24px;text-align:right;" width="180"/>
 </item>
 </items>
