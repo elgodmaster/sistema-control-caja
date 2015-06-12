@@ -1,0 +1,1 @@
+Sistema para el control de caja de un restaurante
